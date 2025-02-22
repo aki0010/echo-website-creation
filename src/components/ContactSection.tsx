@@ -89,85 +89,85 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6">
+    <section id="contact" className="py-12 sm:py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+        <div className="inline-block px-3 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6 text-sm">
           KONTAKTA OSS
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">Låt oss diskutera ditt projekt</h2>
-            <p className="text-neon-green/80 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="max-w-full">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 break-words">Låt oss diskutera ditt projekt</h2>
+            <p className="text-neon-green/80 mb-6 sm:mb-8 text-sm sm:text-base break-words">
               Vi hjälper dig att ta din idé från koncept till verklighet. 
               Fyll i formuläret så återkommer vi inom 24 timmar.
             </p>
             
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
-                <Mail className="w-5 h-5 text-neon-green" />
-                <div>
-                  <h3 className="font-medium">Email</h3>
-                  <p className="text-sm text-neon-green/60">support@neocode.se</p>
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-3 p-3 sm:p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
+                <Mail className="w-5 h-5 text-neon-green flex-shrink-0" />
+                <div className="min-w-0">
+                  <h3 className="font-medium text-sm sm:text-base truncate">Email</h3>
+                  <p className="text-xs sm:text-sm text-neon-green/60 truncate">support@neocode.se</p>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3 p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
-                <Clock className="w-5 h-5 text-neon-green" />
-                <div>
-                  <h3 className="font-medium">Svarstid</h3>
-                  <p className="text-sm text-neon-green/60">Inom 24 timmar</p>
+              <div className="flex items-center gap-3 p-3 sm:p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
+                <Clock className="w-5 h-5 text-neon-green flex-shrink-0" />
+                <div className="min-w-0">
+                  <h3 className="font-medium text-sm sm:text-base truncate">Svarstid</h3>
+                  <p className="text-xs sm:text-sm text-neon-green/60 truncate">Inom 24 timmar</p>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3 p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
-                <Calendar className="w-5 h-5 text-neon-green" />
-                <div>
-                  <h3 className="font-medium">Tillgänglighet</h3>
-                  <p className="text-sm text-neon-green/60">Mån-Fre, 09:00-17:00</p>
+              <div className="flex items-center gap-3 p-3 sm:p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
+                <Calendar className="w-5 h-5 text-neon-green flex-shrink-0" />
+                <div className="min-w-0">
+                  <h3 className="font-medium text-sm sm:text-base truncate">Tillgänglighet</h3>
+                  <p className="text-xs sm:text-sm text-neon-green/60 truncate">Mån-Fre, 09:00-17:00</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="cyber-card">
+          <div className="cyber-card w-full">
             <div className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="name">Namn *</Label>
+                <div className="min-w-0">
+                  <Label htmlFor="name" className="text-sm">Namn *</Label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:border-neon-green"
+                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm"
                     required
                   />
                 </div>
-                <div>
-                  <Label htmlFor="email">Email *</Label>
+                <div className="min-w-0">
+                  <Label htmlFor="email" className="text-sm">Email *</Label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:border-neon-green"
+                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm"
                     required
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="projectType">Projekttyp</Label>
+                <div className="min-w-0">
+                  <Label htmlFor="projectType" className="text-sm">Projekttyp</Label>
                   <select
                     id="projectType"
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleInputChange}
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:border-neon-green"
+                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm"
                   >
                     <option value="">Välj typ</option>
                     <option value="website">Webbplats</option>
@@ -176,14 +176,14 @@ const ContactSection = () => {
                     <option value="other">Annat</option>
                   </select>
                 </div>
-                <div>
-                  <Label htmlFor="budget">Budget</Label>
+                <div className="min-w-0">
+                  <Label htmlFor="budget" className="text-sm">Budget</Label>
                   <select
                     id="budget"
                     name="budget"
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:border-neon-green"
+                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm"
                   >
                     <option value="">Välj budget</option>
                     <option value="small">10k - 25k SEK</option>
@@ -193,14 +193,14 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div>
-                <Label htmlFor="timeline">Önskad tidslinje</Label>
+              <div className="min-w-0">
+                <Label htmlFor="timeline" className="text-sm">Önskad tidslinje</Label>
                 <select
                   id="timeline"
                   name="timeline"
                   value={formData.timeline}
                   onChange={handleInputChange}
-                  className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:border-neon-green"
+                  className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm"
                 >
                   <option value="">Välj tidslinje</option>
                   <option value="asap">Så snart som möjligt</option>
@@ -210,14 +210,14 @@ const ContactSection = () => {
                 </select>
               </div>
 
-              <div>
-                <Label htmlFor="description">Projektbeskrivning *</Label>
+              <div className="min-w-0">
+                <Label htmlFor="description" className="text-sm">Projektbeskrivning *</Label>
                 <Textarea
                   id="description"
                   name="description"
                   value={formData.description}
                   onChange={handleInputChange}
-                  className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:border-neon-green min-h-[120px]"
+                  className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green min-h-[120px] text-sm"
                   placeholder="Berätta om ditt projekt..."
                   required
                 />
@@ -226,7 +226,7 @@ const ContactSection = () => {
               <button
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="w-full sm:w-auto px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm"
               >
                 {isSubmitting ? (
                   "Skickar..."
