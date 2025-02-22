@@ -6,75 +6,75 @@ import ServiceCard from '@/components/ServiceCard';
 const Services = () => {
   const services = [
     {
-      title: "Website Development",
+      title: "Webbutveckling",
       type: "website" as const,
-      description: "Professional website development with modern design principles and comprehensive branding integration.",
-      status: "READY" as const,
+      description: "Professionell webbutveckling med moderna designprinciper och omfattande varumärkesintegration.",
+      status: "REDO" as const,
       features: [
-        { name: "Professional Design" },
-        { name: "Mobile Responsiveness" },
-        { name: "Brand Identity" },
-        { name: "Visual Excellence" }
+        { name: "Professionell Design" },
+        { name: "Mobilanpassning" },
+        { name: "Varumärkesidentitet" },
+        { name: "Visuell Excellens" }
       ]
     },
     {
-      title: "Web3 Integration",
+      title: "Webbplats/App UI Design",
       type: "web3" as const,
-      description: "Seamless integration of Web3 functionality with optimized performance and user experience.",
-      status: "READY" as const,
+      description: "Skapa moderna och användarvänliga gränssnitt för webbplatser och appar.",
+      status: "REDO" as const,
       features: [
-        { name: "Blockchain Integration" },
-        { name: "Wallet Connectivity" },
-        { name: "Transaction Handling" },
-        { name: "Cross-Platform Support" }
+        { name: "Användarcentrerad Design" },
+        { name: "Interaktiva Prototyper" },
+        { name: "Responsiv Design" },
+        { name: "Designsystem" }
       ]
     },
     {
-      title: "Performance Analytics",
+      title: "Prestandaanalys",
       type: "analytics" as const,
-      description: "Comprehensive analytics dashboard for monitoring project metrics and user engagement.",
-      status: "INITIALIZING" as const,
+      description: "Omfattande analysdashboard för övervakning av projektmätvärden och användarengagemang.",
+      status: "INITIERAR" as const,
       features: [
-        { name: "Data Visualization" },
-        { name: "Metric Tracking" },
-        { name: "User Insights" },
-        { name: "Performance Monitoring" }
+        { name: "Datavisualisering" },
+        { name: "Mätning" },
+        { name: "Användarinsikter" },
+        { name: "Prestandaövervakning" }
       ]
     },
     {
-      title: "Community Platform",
+      title: "Communityplattform",
       type: "community" as const,
-      description: "Integrated community management platform with comprehensive engagement tools.",
-      status: "READY" as const,
+      description: "Integrerad communityhanteringsplattform med omfattande engagemangsverktyg.",
+      status: "REDO" as const,
       features: [
-        { name: "Social Features" },
-        { name: "Member Management" },
-        { name: "Communication Tools" },
-        { name: "Engagement Tracking" }
+        { name: "Sociala Funktioner" },
+        { name: "Medlemshantering" },
+        { name: "Kommunikationsverktyg" },
+        { name: "Engagemangsövervakning" }
       ]
     },
     {
-      title: "Security Implementation",
+      title: "Säkerhetsimplementering",
       type: "security" as const,
-      description: "Enterprise-grade security implementation with comprehensive protection measures.",
-      status: "READY" as const,
+      description: "Säkerhetsimplementering på företagsnivå med omfattande skyddsåtgärder.",
+      status: "REDO" as const,
       features: [
-        { name: "Attack Prevention" },
-        { name: "Data Protection" },
-        { name: "Access Control" },
-        { name: "Security Updates" }
+        { name: "Attackprevention" },
+        { name: "Dataskydd" },
+        { name: "Åtkomstkontroll" },
+        { name: "Säkerhetsuppdateringar" }
       ]
     },
     {
-      title: "Technical Operations",
+      title: "Teknisk Drift",
       type: "technical" as const,
-      description: "Professional technical support and maintenance services for optimal performance.",
-      status: "INITIALIZING" as const,
+      description: "Professionell teknisk support och underhållstjänster för optimal prestanda.",
+      status: "INITIERAR" as const,
       features: [
-        { name: "Continuous Support" },
-        { name: "System Updates" },
-        { name: "Performance Optimization" },
-        { name: "Infrastructure Management" }
+        { name: "Kontinuerligt Stöd" },
+        { name: "Systemuppdateringar" },
+        { name: "Prestandaoptimering" },
+        { name: "Infrastrukturhantering" }
       ]
     }
   ];
@@ -86,10 +86,10 @@ const Services = () => {
         <Navigation />
         <main className="pt-24 px-6 pb-24">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-5xl font-bold mb-6">SERVICES_MATRIX</h1>
+            <h1 className="text-5xl font-bold mb-6">TJÄNSTER_MATRIS</h1>
             <p className="text-neon-green/80 mb-12 max-w-2xl">
-              Explore our comprehensive range of services designed to transform your digital presence
-              with cutting-edge technology and innovative solutions.
+              Utforska vårt omfattande utbud av tjänster utformade för att transformera din digitala närvaro
+              med toppmodern teknik och innovativa lösningar.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

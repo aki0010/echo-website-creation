@@ -16,39 +16,39 @@ const Index = () => {
           {/* Hero Section */}
           <section className="max-w-7xl mx-auto mb-24">
             <div className="inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6">
-              NEXT_GEN_INNOVATION
+              NÄSTA_GENERATIONS_INNOVATION
             </div>
             <h1 className="text-6xl md:text-7xl font-bold mb-6 animate-glow">
-              DEGEN-<span className="text-neon-purple">DESIGN</span>
+              NEO<span className="text-neon-purple">CODE</span>
             </h1>
             <div className="max-w-2xl mb-8">
               <h2 className="text-2xl mb-4">
-                Websites for Degens.<br />
-                Solutions for Businesses.
+                Moderna webbplatser.<br />
+                Företagslösningar.
               </h2>
               <p className="text-neon-green/80">
-                From viral memecoins and next-level degen dApps to scalable business solutions 
-                we provide high-speed, high energy platforms, with ironclad security.
-                Your dream, our magic.
+                Från innovativa applikationer till skalbara företagslösningar, 
+                erbjuder vi högpresterande plattformar med oöverträffad säkerhet.
+                Din vision, vår expertis.
               </p>
             </div>
             
             <div className="flex flex-wrap gap-4 mb-8">
               <button className="px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300 flex items-center gap-2">
-                INITIALIZE_PROJECT
+                STARTA_PROJEKT
                 <ArrowRight className="w-4 h-4" />
               </button>
               <button className="px-6 py-3 bg-neon-purple/10 rounded-lg border border-neon-purple/30 hover:bg-neon-purple/20 transition-all duration-300 flex items-center gap-2">
-                VIEW_DEPLOYMENTS
+                SE_LANSERINGAR
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <TechBadge name="SOLANA" />
-              <TechBadge name="EVM" />
-              <TechBadge name="WEB3" />
-              <TechBadge name="DEFI" />
+              <TechBadge name="MODERNA_TECH" />
+              <TechBadge name="RESPONSIV" />
+              <TechBadge name="UI/UX" />
+              <TechBadge name="PRESTANDA" />
             </div>
           </section>
 
@@ -57,43 +57,23 @@ const Index = () => {
             <StatsCard
               type="websites"
               value="5+"
-              label="WEBSITES_LAUNCHED"
+              label="WEBBPLATSER_LANSERADE"
             />
             <StatsCard
               type="satisfaction"
               value="100%"
-              label="CLIENT_RATING"
+              label="KUNDNÖJDHET"
             />
             <StatsCard
               type="innovation"
-              value="ELITE"
-              label="DEVELOPMENT"
+              value="ELIT"
+              label="UTVECKLING"
             />
             <StatsCard
               type="uptime"
               value="99.9%"
-              label="RELIABILITY"
+              label="TILLFÖRLITLIGHET"
             />
-          </section>
-
-          {/* Services Section */}
-          <section className="max-w-7xl mx-auto mb-24">
-            <div className="cyber-card">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-neon-green/20 rounded-lg flex items-center justify-center border border-neon-green/30">
-                    <span className="text-neon-green">✦</span>
-                  </div>
-                  <h2 className="text-xl font-bold">
-                    Professional <span className="text-neon-purple">Services</span>
-                  </h2>
-                </div>
-                <div className="px-3 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 text-sm">
-                  System Active
-                </div>
-              </div>
-              <p className="text-neon-green/80">Development Solutions</p>
-            </div>
           </section>
         </main>
       </div>
