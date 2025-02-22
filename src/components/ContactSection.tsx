@@ -1,3 +1,4 @@
+
 import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
 import {
@@ -71,22 +72,6 @@ const ContactSection = () => {
             </div>
             
             <div className="flex flex-col gap-4">
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                placeholder="Ditt namn"
-                className="bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
-              />
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="Din e-post"
-                className="bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
-              />
               <Dialog>
                 <DialogTrigger asChild>
                   <button className="flex items-center justify-center gap-2 px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300">
@@ -99,6 +84,32 @@ const ContactSection = () => {
                     <DialogTitle className="text-2xl font-bold mb-4">PROJEKT_DETALJER</DialogTitle>
                   </DialogHeader>
                   <div className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Ditt namn</Label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Ditt namn"
+                        className="w-full bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Din e-post</Label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="Din e-post"
+                        className="w-full bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
+                      />
+                    </div>
+
                     <div className="space-y-2">
                       <Label htmlFor="projectType">Typ av projekt</Label>
                       <select
