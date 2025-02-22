@@ -2,6 +2,7 @@
 import Navigation from '@/components/Navigation';
 import MatrixRain from '@/components/MatrixRain';
 import ServiceCard from '@/components/ServiceCard';
+import { Code2, Database, Cpu, Globe, Boxes, Workflow } from 'lucide-react';
 
 const Services = () => {
   const services = [
@@ -79,6 +80,45 @@ const Services = () => {
     }
   ];
 
+  const expertiseAreas = [
+    {
+      title: "Backend",
+      icon: Database,
+      skills: ["Node.js", "Python", "PostgreSQL", "REST API"],
+      description: "Robusta och skalbara backend-lösningar"
+    },
+    {
+      title: "Frontend",
+      icon: Code2,
+      skills: ["React", "TypeScript", "TailwindCSS", "Next.js"],
+      description: "Moderna och responsiva användargränssnitt"
+    },
+    {
+      title: "Utvecklingsverktyg",
+      icon: Workflow,
+      skills: ["Databaser", "Docker", "AWS", "CI/CD"],
+      description: "Effektiva verktyg för utveckling och driftsättning"
+    },
+    {
+      title: "Cloud & DevOps",
+      icon: Globe,
+      skills: ["AWS", "Azure", "Kubernetes", "Jenkins"],
+      description: "Molnbaserade lösningar och automation"
+    },
+    {
+      title: "System Integration",
+      icon: Boxes,
+      skills: ["API", "Microservices", "ESB", "ETL"],
+      description: "Sömlös integration mellan system"
+    },
+    {
+      title: "Performance & Security",
+      icon: Cpu,
+      skills: ["SSL", "Caching", "Load Balancing", "Monitoring"],
+      description: "Optimerad prestanda och säkerhet"
+    }
+  ];
+
   return (
     <div id="services" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -107,60 +147,34 @@ const Services = () => {
         <div className="mt-24">
           <h2 className="text-3xl font-bold mb-8">VÅR EXPERTIS</h2>
           
-          <div className="grid gap-8">
-            <div className="cyber-card p-6">
-              <h3 className="text-xl mb-4">Backend</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="flex items-center gap-2">
-                  <span className="text-neon-green">Node.js</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {expertiseAreas.map((area, index) => {
+              const Icon = area.icon;
+              return (
+                <div key={index} className="cyber-card group hover:scale-[1.02] transition-all duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-neon-green/10 border border-neon-green/30 group-hover:bg-neon-green/20 transition-colors">
+                      <Icon className="w-6 h-6 text-neon-green" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl mb-2">{area.title}</h3>
+                      <p className="text-sm text-neon-green/60 mb-4">{area.description}</p>
+                      <div className="grid grid-cols-2 gap-2">
+                        {area.skills.map((skill, skillIndex) => (
+                          <div 
+                            key={skillIndex}
+                            className="flex items-center gap-2 text-sm text-neon-green/80"
+                          >
+                            <span className="w-1.5 h-1.5 bg-neon-green/50 rounded-full"></span>
+                            {skill}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-neon-green">Python</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-neon-green">PostgreSQL</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-neon-green">REST API</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="cyber-card p-6">
-              <h3 className="text-xl mb-4">Frontend</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="flex items-center gap-2">
-                  <span className="text-neon-green">React</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-neon-green">TypeScript</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-neon-green">TailwindCSS</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-neon-green">Next.js</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="cyber-card p-6">
-              <h3 className="text-xl mb-4">Utvecklingsverktyg</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="flex items-center gap-2">
-                  <span className="text-neon-green">Databaser</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-neon-green">Docker</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-neon-green">AWS</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-neon-green">CI/CD</span>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>
