@@ -72,7 +72,7 @@ const Process = () => {
                   <Code2 className="w-8 h-8 text-neon-green" />
                   <div>
                     <h1 className="text-4xl font-bold">
-                      DESIGN <span className="text-neon-purple">PROCESS</span>
+                      DEVELOPMENT <span className="text-neon-purple">PROCESS</span>
                     </h1>
                     <p className="text-neon-green/60">WEBSITE_CREATION_ENGINE</p>
                   </div>
