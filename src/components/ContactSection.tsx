@@ -27,7 +27,7 @@ const ContactSection = () => {
 
   useEffect(() => {
     // Initialize EmailJS with your public key
-    emailjs.init("pJpO4TDjdro8YcaQq");
+    emailjs.init("RXtO2yaS1DANkbyq7");
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -51,8 +51,8 @@ const ContactSection = () => {
 
     try {
       await emailjs.send(
-        'service_fnrpg2n', // Your updated EmailJS service ID
-        'template_lcsxkbq', // Your updated EmailJS template ID
+        'service_fnrpg2n',
+        'template_lcsxkbq',
         {
           from_name: formData.name,
           from_email: formData.email,
