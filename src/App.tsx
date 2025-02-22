@@ -90,7 +90,7 @@ const App = () => <QueryClientProvider client={queryClient}>
                     </ScrollLink>
                   </div>
                 </div>
-                <div>
+                <div className="update it with our services ">
                   <h3 className="font-bold mb-4">SERVICES</h3>
                   <div className="space-y-2 text-sm">
                     <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
