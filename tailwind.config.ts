@@ -20,6 +20,7 @@ export default {
     },
     extend: {
       colors: {
+        border: "rgb(var(--border) / <alpha-value>)", // Add this line
         neon: {
           green: "#00FF9D",
           purple: "#9D00FF",

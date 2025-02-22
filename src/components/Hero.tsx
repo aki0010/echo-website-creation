@@ -1,5 +1,5 @@
 
-import { ArrowRight, Clock24, Shield } from 'lucide-react';
+import { ArrowRight, Clock2, Shield } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -13,7 +13,7 @@ const Hero = () => {
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           <div className="flex items-center gap-2 px-4 py-2 border border-neon-green/20 rounded-full">
-            <Clock24 className="w-4 h-4" />
+            <Clock2 className="w-4 h-4" />
             <span>24/7 Response</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 border border-neon-green/20 rounded-full">

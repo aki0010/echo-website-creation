@@ -24,7 +24,7 @@
   }
 
   * {
-    @apply border-border selection:bg-neon-green/20 selection:text-neon-green;
+    @apply border-neon-green/20 selection:bg-neon-green/20 selection:text-neon-green;
   }
 
   body {
