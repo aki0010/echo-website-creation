@@ -6,106 +6,163 @@ import ServiceCard from '@/components/ServiceCard';
 const Services = () => {
   const services = [
     {
-      title: "Webbutveckling",
+      title: "Webbdesign & Utveckling",
       type: "website" as const,
-      description: "Professionell webbutveckling med moderna designprinciper och omfattande varumärkesintegration.",
-      status: "REDO" as const,
+      description: "Skräddarsydda webbplatser med responsiv design och SEO-optimering.",
+      status: "TILLGÄNGLIG" as const,
       features: [
-        { name: "Professionell Design" },
-        { name: "Mobilanpassning" },
-        { name: "Varumärkesidentitet" },
-        { name: "Visuell Excellens" }
-      ]
-    },
-    {
-      title: "Webbplats/App UI Design",
-      type: "web3" as const,
-      description: "Skapa moderna och användarvänliga gränssnitt för webbplatser och appar.",
-      status: "REDO" as const,
-      features: [
-        { name: "Användarcentrerad Design" },
-        { name: "Interaktiva Prototyper" },
         { name: "Responsiv Design" },
-        { name: "Designsystem" }
+        { name: "SEO-optimering" },
+        { name: "Moderna Tekniker" },
+        { name: "Prestanda" }
       ]
     },
     {
-      title: "Prestandaanalys",
-      type: "analytics" as const,
-      description: "Omfattande analysdashboard för övervakning av projektmätvärden och användarengagemang.",
-      status: "INITIERAR" as const,
-      features: [
-        { name: "Datavisualisering" },
-        { name: "Mätning" },
-        { name: "Användarinsikter" },
-        { name: "Prestandaövervakning" }
-      ]
-    },
-    {
-      title: "Communityplattform",
-      type: "community" as const,
-      description: "Integrerad communityhanteringsplattform med omfattande engagemangsverktyg.",
-      status: "REDO" as const,
-      features: [
-        { name: "Sociala Funktioner" },
-        { name: "Medlemshantering" },
-        { name: "Kommunikationsverktyg" },
-        { name: "Engagemangsövervakning" }
-      ]
-    },
-    {
-      title: "Säkerhetsimplementering",
-      type: "security" as const,
-      description: "Säkerhetsimplementering på företagsnivå med omfattande skyddsåtgärder.",
-      status: "REDO" as const,
-      features: [
-        { name: "Attackprevention" },
-        { name: "Dataskydd" },
-        { name: "Åtkomstkontroll" },
-        { name: "Säkerhetsuppdateringar" }
-      ]
-    },
-    {
-      title: "Teknisk Drift",
+      title: "App-utveckling",
       type: "technical" as const,
-      description: "Professionell teknisk support och underhållstjänster för optimal prestanda.",
-      status: "INITIERAR" as const,
+      description: "iOS, Android och hybrid-appar med modern teknologi och användarfokus.",
+      status: "TILLGÄNGLIG" as const,
       features: [
-        { name: "Kontinuerligt Stöd" },
-        { name: "Systemuppdateringar" },
-        { name: "Prestandaoptimering" },
-        { name: "Infrastrukturhantering" }
+        { name: "iOS & Android" },
+        { name: "Hybrid-appar" },
+        { name: "Användarfokus" },
+        { name: "Modern Teknologi" }
+      ]
+    },
+    {
+      title: "UI Design",
+      type: "web3" as const,
+      description: "Användarvänliga gränssnitt med fokus på UX och interaktionsdesign.",
+      status: "TILLGÄNGLIG" as const,
+      features: [
+        { name: "UX Design" },
+        { name: "Interaktionsdesign" },
+        { name: "Användartester" },
+        { name: "Prototyper" }
+      ]
+    },
+    {
+      title: "E-handelslösningar",
+      type: "analytics" as const,
+      description: "Kompletta e-handelsplattformar med säker betalning och lagerhantering.",
+      status: "TILLGÄNGLIG" as const,
+      features: [
+        { name: "Säker Betalning" },
+        { name: "Lagerhantering" },
+        { name: "Integration" },
+        { name: "E-handelsplattform" }
+      ]
+    },
+    {
+      title: "Logotyp & Grafisk Design",
+      type: "community" as const,
+      description: "Företagslogotyper, visuell identitet och tryckmaterial.",
+      status: "TILLGÄNGLIG" as const,
+      features: [
+        { name: "Logotyper" },
+        { name: "Visuell Identitet" },
+        { name: "Tryckmaterial" },
+        { name: "Varumärkesdesign" }
+      ]
+    },
+    {
+      title: "Webbunderhåll",
+      type: "security" as const,
+      description: "Kontinuerlig support, uppdateringar och tekniskt underhåll.",
+      status: "TILLGÄNGLIG" as const,
+      features: [
+        { name: "Support" },
+        { name: "Uppdateringar" },
+        { name: "Tekniskt Underhåll" },
+        { name: "Övervakning" }
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-cyber-dark text-neon-green overflow-hidden">
-      <MatrixRain />
-      <div className="relative z-10">
-        <Navigation />
-        <main className="pt-24 px-6 pb-24">
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-5xl font-bold mb-6">TJÄNSTER_MATRIS</h1>
-            <p className="text-neon-green/80 mb-12 max-w-2xl">
-              Utforska vårt omfattande utbud av tjänster utformade för att transformera din digitala närvaro
-              med toppmodern teknik och innovativa lösningar.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => (
-                <ServiceCard
-                  key={index}
-                  title={service.title}
-                  type={service.type}
-                  description={service.description}
-                  status={service.status}
-                  features={service.features}
-                />
-              ))}
+    <div id="services" className="py-24">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6">
+          DIGITAL INNOVATION
+        </div>
+        <h1 className="text-5xl font-bold mb-6">TJÄNSTER</h1>
+        <p className="text-neon-green/80 mb-12 max-w-2xl">
+          Vi är experter på att skapa digitala lösningar som hjälper företag att växa online. 
+          Med vårt unika "betala när du är nöjd"-koncept garanterar vi högsta kvalitet och kundnöjdhet.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <ServiceCard
+              key={index}
+              title={service.title}
+              type={service.type}
+              description={service.description}
+              status={service.status}
+              features={service.features}
+            />
+          ))}
+        </div>
+
+        <div className="mt-24">
+          <h2 className="text-3xl font-bold mb-8">VÅR EXPERTIS</h2>
+          
+          <div className="grid gap-8">
+            <div className="cyber-card p-6">
+              <h3 className="text-xl mb-4">Backend</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-neon-green">Node.js</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-neon-green">Python</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-neon-green">PostgreSQL</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-neon-green">REST API</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="cyber-card p-6">
+              <h3 className="text-xl mb-4">Frontend</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-neon-green">React</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-neon-green">TypeScript</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-neon-green">TailwindCSS</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-neon-green">Next.js</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="cyber-card p-6">
+              <h3 className="text-xl mb-4">Utvecklingsverktyg</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-neon-green">Databaser</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-neon-green">Docker</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-neon-green">AWS</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-neon-green">CI/CD</span>
+                </div>
+              </div>
             </div>
           </div>
-        </main>
+        </div>
       </div>
     </div>
   );
