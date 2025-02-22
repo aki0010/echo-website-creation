@@ -1,7 +1,32 @@
-
 import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
+import { useState } from 'react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    projectType: '',
+    budget: '',
+    timeline: '',
+    description: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <section id="contact" className="py-24">
       <div className="cyber-card p-8">
@@ -48,18 +73,108 @@ const ContactSection = () => {
             <div className="flex flex-col gap-4">
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
                 placeholder="Ditt namn"
                 className="bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
               />
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 placeholder="Din e-post"
                 className="bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
               />
-              <button className="flex items-center justify-center gap-2 px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300">
-                BOKA_NU
-                <Send className="w-4 h-4" />
-              </button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="flex items-center justify-center gap-2 px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300">
+                    BESKRIV_DITT_PROJEKT
+                    <Send className="w-4 h-4" />
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="bg-cyber-dark border-neon-green/30 text-neon-green">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold mb-4">PROJEKT_DETALJER</DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="projectType">Typ av projekt</Label>
+                      <select
+                        id="projectType"
+                        name="projectType"
+                        value={formData.projectType}
+                        onChange={handleInputChange}
+                        className="w-full bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
+                      >
+                        <option value="">Välj projekttyp</option>
+                        <option value="website">Webbplats</option>
+                        <option value="ecommerce">E-handel</option>
+                        <option value="webapp">Webbapplikation</option>
+                        <option value="other">Annat</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="budget">Budget (SEK)</Label>
+                      <select
+                        id="budget"
+                        name="budget"
+                        value={formData.budget}
+                        onChange={handleInputChange}
+                        className="w-full bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
+                      >
+                        <option value="">Välj budget</option>
+                        <option value="10-30k">10,000 - 30,000</option>
+                        <option value="30-50k">30,000 - 50,000</option>
+                        <option value="50-100k">50,000 - 100,000</option>
+                        <option value="100k+">100,000+</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="timeline">Önskad tidslinje</Label>
+                      <select
+                        id="timeline"
+                        name="timeline"
+                        value={formData.timeline}
+                        onChange={handleInputChange}
+                        className="w-full bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
+                      >
+                        <option value="">Välj tidslinje</option>
+                        <option value="1-2">1-2 månader</option>
+                        <option value="2-3">2-3 månader</option>
+                        <option value="3-6">3-6 månader</option>
+                        <option value="6+">6+ månader</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="description">Projektbeskrivning</Label>
+                      <Textarea
+                        id="description"
+                        name="description"
+                        value={formData.description}
+                        onChange={handleInputChange}
+                        placeholder="Beskriv ditt projekt i detalj..."
+                        className="min-h-[150px] bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
+                      />
+                    </div>
+
+                    <button 
+                      className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300"
+                      onClick={() => {
+                        // Handle form submission here
+                        console.log('Form data:', formData);
+                      }}
+                    >
+                      SKICKA_FÖRFRÅGAN
+                      <Send className="w-4 h-4" />
+                    </button>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         </div>
