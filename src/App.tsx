@@ -8,7 +8,7 @@ import MatrixRain from "./components/MatrixRain";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Process from "./pages/Process";
-import MissionLog from "./components/MissionLog";
+import PortfolioSection from "./components/PortfolioSection";
 import Terminal from "./components/Terminal";
 import ContactSection from "./components/ContactSection";
 
@@ -36,7 +36,7 @@ const App = () => (
               <Process />
             </section>
 
-            <MissionLog />
+            <PortfolioSection />
             
             <Terminal />
 
