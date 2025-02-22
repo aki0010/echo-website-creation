@@ -26,7 +26,6 @@ const ContactSection = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Initialize EmailJS with your public key
     emailjs.init("RXtO2yaS1DANkbyq7");
   }, []);
 
@@ -68,7 +67,6 @@ const ContactSection = () => {
         description: "Vi återkommer till dig så snart som möjligt.",
       });
 
-      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -91,210 +89,155 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24">
-      <div className="cyber-card p-8">
-        <h2 className="text-4xl font-bold mb-2">
-          INITIATE_<span className="text-neon-purple">CONTACT</span>
-        </h2>
-        <p className="text-neon-green/60 mb-8">READY_TO_LAUNCH_YOUR_PROJECT</p>
-
-        <div className="flex gap-4 mb-8">
-          <div className="px-4 py-2 bg-neon-green/10 rounded-full border border-neon-green/30">
-            <div className="flex items-center gap-2">
-              <MessageSquare className="w-4 h-4" />
-              <span className="text-sm">24/7 Response</span>
-            </div>
-          </div>
-          <div className="px-4 py-2 bg-neon-green/10 rounded-full border border-neon-green/30">
-            <div className="flex items-center gap-2">
-              <Bot className="w-4 h-4" />
-              <span className="text-sm">Secure Channel</span>
-            </div>
-          </div>
+    <section id="contact" className="py-12 sm:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6">
+          KONTAKTA OSS
         </div>
-
-        {/* Consultation Booking Section */}
-        <div className="cyber-card mb-8">
-          <h3 className="text-2xl font-bold mb-6">BOKA_KONSULTATION</h3>
-          <p className="text-neon-green/80 mb-8">
-            Ta första steget mot din digitala transformation. Boka en kostnadsfri 
-            30-minuters konsultation med våra experter.
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="flex items-center gap-3">
-                <Calendar className="w-5 h-5 text-neon-green" />
-                <span>Flexibla tider tillgängliga</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-neon-green" />
-                <span>30 minuters kostnadsfri session</span>
-              </div>
-            </div>
-            
-            <div className="flex flex-col gap-4">
-              <Dialog>
-                <DialogTrigger asChild>
-                  <button className="flex items-center justify-center gap-2 px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300">
-                    BESKRIV_DITT_PROJEKT
-                    <Send className="w-4 h-4" />
-                  </button>
-                </DialogTrigger>
-                <DialogContent className="bg-cyber-dark border-neon-green/30 text-neon-green">
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold mb-4">PROJEKT_DETALJER</DialogTitle>
-                  </DialogHeader>
-                  <div className="space-y-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Ditt namn</Label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Ditt namn"
-                        className="w-full bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Din e-post</Label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="Din e-post"
-                        className="w-full bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="projectType">Typ av projekt</Label>
-                      <select
-                        id="projectType"
-                        name="projectType"
-                        value={formData.projectType}
-                        onChange={handleInputChange}
-                        className="w-full bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
-                      >
-                        <option value="">Välj projekttyp</option>
-                        <option value="website">Webbplats</option>
-                        <option value="ecommerce">E-handel</option>
-                        <option value="webapp">Webbapplikation</option>
-                        <option value="other">Annat</option>
-                      </select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="budget">Budget (SEK)</Label>
-                      <select
-                        id="budget"
-                        name="budget"
-                        value={formData.budget}
-                        onChange={handleInputChange}
-                        className="w-full bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
-                      >
-                        <option value="">Välj budget</option>
-                        <option value="10-30k">10,000 - 30,000</option>
-                        <option value="30-50k">30,000 - 50,000</option>
-                        <option value="50-100k">50,000 - 100,000</option>
-                        <option value="100k+">100,000+</option>
-                      </select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="timeline">Önskad tidslinje</Label>
-                      <select
-                        id="timeline"
-                        name="timeline"
-                        value={formData.timeline}
-                        onChange={handleInputChange}
-                        className="w-full bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
-                      >
-                        <option value="">Välj tidslinje</option>
-                        <option value="1-2">1-2 månader</option>
-                        <option value="2-3">2-3 månader</option>
-                        <option value="3-6">3-6 månader</option>
-                        <option value="6+">6+ månader</option>
-                      </select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="description">Projektbeskrivning</Label>
-                      <Textarea
-                        id="description"
-                        name="description"
-                        value={formData.description}
-                        onChange={handleInputChange}
-                        placeholder="Beskriv ditt projekt i detalj..."
-                        className="min-h-[150px] bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
-                      />
-                    </div>
-
-                    <button 
-                      className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300"
-                      onClick={handleSubmit}
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <span>SKICKAR...</span>
-                      ) : (
-                        <>
-                          SKICKA_FÖRFRÅGAN
-                          <Send className="w-4 h-4" />
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </DialogContent>
-              </Dialog>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="cyber-card">
-            <h3 className="text-xl font-bold mb-4">QUICK_CONNECT</h3>
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-neon-green" />
-                <a href="mailto:nickw@degenwebdesign.com" className="text-neon-green hover:text-neon-green/80">
-                  nickw@degenwebdesign.com
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-neon-green" />
-                <a href="mailto:shaunh@degenwebdesign.com" className="text-neon-green hover:text-neon-green/80">
-                  shaunh@degenwebdesign.com
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Twitter className="w-4 h-4 text-neon-green" />
-                <a href="https://twitter.com/DegenWebDesign" className="text-neon-green hover:text-neon-green/80">
-                  @DegenWebDesign
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Bot className="w-4 h-4 text-neon-green" />
-                <a href="#" className="text-neon-green hover:text-neon-green/80">
-                  Join Discord
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="cyber-card">
-            <h3 className="text-xl font-bold mb-4">START_TRANSMISSION</h3>
-            <p className="text-neon-green/80 mb-6">
-              Initialize secure communication channel for your project requirements.
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">Låt oss diskutera ditt projekt</h2>
+            <p className="text-neon-green/80 mb-8">
+              Vi hjälper dig att ta din idé från koncept till verklighet. 
+              Fyll i formuläret så återkommer vi inom 24 timmar.
             </p>
-            <button className="w-full py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-colors">
-              CONNECT_NOW
-            </button>
+            
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
+                <Mail className="w-5 h-5 text-neon-green" />
+                <div>
+                  <h3 className="font-medium">Email</h3>
+                  <p className="text-sm text-neon-green/60">support@neocode.se</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3 p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
+                <Clock className="w-5 h-5 text-neon-green" />
+                <div>
+                  <h3 className="font-medium">Svarstid</h3>
+                  <p className="text-sm text-neon-green/60">Inom 24 timmar</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3 p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
+                <Calendar className="w-5 h-5 text-neon-green" />
+                <div>
+                  <h3 className="font-medium">Tillgänglighet</h3>
+                  <p className="text-sm text-neon-green/60">Mån-Fre, 09:00-17:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="cyber-card">
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="name">Namn *</Label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:border-neon-green"
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="email">Email *</Label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:border-neon-green"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="projectType">Projekttyp</Label>
+                  <select
+                    id="projectType"
+                    name="projectType"
+                    value={formData.projectType}
+                    onChange={handleInputChange}
+                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:border-neon-green"
+                  >
+                    <option value="">Välj typ</option>
+                    <option value="website">Webbplats</option>
+                    <option value="webapp">Webbapplikation</option>
+                    <option value="ecommerce">E-handel</option>
+                    <option value="other">Annat</option>
+                  </select>
+                </div>
+                <div>
+                  <Label htmlFor="budget">Budget</Label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleInputChange}
+                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:border-neon-green"
+                  >
+                    <option value="">Välj budget</option>
+                    <option value="small">10k - 25k SEK</option>
+                    <option value="medium">25k - 50k SEK</option>
+                    <option value="large">50k+ SEK</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <Label htmlFor="timeline">Önskad tidslinje</Label>
+                <select
+                  id="timeline"
+                  name="timeline"
+                  value={formData.timeline}
+                  onChange={handleInputChange}
+                  className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:border-neon-green"
+                >
+                  <option value="">Välj tidslinje</option>
+                  <option value="asap">Så snart som möjligt</option>
+                  <option value="1month">Inom 1 månad</option>
+                  <option value="3months">Inom 3 månader</option>
+                  <option value="flexible">Flexibel</option>
+                </select>
+              </div>
+
+              <div>
+                <Label htmlFor="description">Projektbeskrivning *</Label>
+                <Textarea
+                  id="description"
+                  name="description"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                  className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:border-neon-green min-h-[120px]"
+                  placeholder="Berätta om ditt projekt..."
+                  required
+                />
+              </div>
+
+              <button
+                onClick={handleSubmit}
+                disabled={isSubmitting}
+                className="w-full sm:w-auto px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? (
+                  "Skickar..."
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" />
+                    Skicka förfrågan
+                  </>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
