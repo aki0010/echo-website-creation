@@ -87,7 +87,7 @@ const Process = () => {
             </div>
 
             {/* Process Phases Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {phases.map((phase) => (
                 <div key={phase.number} className="cyber-card flex flex-col h-full">
                   <div className="flex items-center gap-3 mb-6">
@@ -123,31 +123,6 @@ const Process = () => {
                   </div>
                 </div>
               ))}
-            </div>
-
-            {/* Mission Log Section */}
-            <div className="cyber-card p-8">
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center gap-4">
-                  <Star className="w-6 h-6 text-neon-green" />
-                  <div>
-                    <h2 className="text-2xl font-bold">
-                      MISSION_<span className="text-neon-purple">LOG</span>
-                    </h2>
-                    <p className="text-neon-green/60">COMPLETED_OPERATIONS</p>
-                  </div>
-                </div>
-                <div className="px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse"></div>
-                    <span className="text-sm">MISSION_ACTIVE</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="aspect-video w-full bg-cyber-dark/50 rounded-lg border border-neon-green/20">
-                {/* Mission log content placeholder */}
-              </div>
             </div>
           </div>
         </main>
