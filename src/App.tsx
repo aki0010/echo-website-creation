@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,11 +12,8 @@ import PortfolioSection from "./components/PortfolioSection";
 import Terminal from "./components/Terminal";
 import ContactSection from "./components/ContactSection";
 import { Twitter, Github, Linkedin } from 'lucide-react';
-
 const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
+const App = () => <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -54,32 +50,15 @@ const App = () => (
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                   <h3 className="font-bold mb-4">DEGENDESIGNS</h3>
-                  <p className="text-sm text-neon-green/60">
-                    Elite Web3 Development Agency specializing in high-performance dApps, DeFi interfaces, and crypto platforms.
-                  </p>
+                  <p className="text-sm text-neon-green/60">NeoCode Development Agency specializing in high-performance dApps, DeFi interfaces, and crypto platforms.</p>
                   <div className="flex gap-4 mt-4">
-                    <a 
-                      href="https://twitter.com/degendesigns" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-neon-green/60 hover:text-neon-green transition-colors"
-                    >
+                    <a href="https://twitter.com/degendesigns" target="_blank" rel="noopener noreferrer" className="text-neon-green/60 hover:text-neon-green transition-colors">
                       <Twitter className="w-5 h-5" />
                     </a>
-                    <a 
-                      href="https://github.com/degendesigns" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-neon-green/60 hover:text-neon-green transition-colors"
-                    >
+                    <a href="https://github.com/degendesigns" target="_blank" rel="noopener noreferrer" className="text-neon-green/60 hover:text-neon-green transition-colors">
                       <Github className="w-5 h-5" />
                     </a>
-                    <a 
-                      href="https://linkedin.com/company/degendesigns" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-neon-green/60 hover:text-neon-green transition-colors"
-                    >
+                    <a href="https://linkedin.com/company/degendesigns" target="_blank" rel="noopener noreferrer" className="text-neon-green/60 hover:text-neon-green transition-colors">
                       <Linkedin className="w-5 h-5" />
                     </a>
                   </div>
@@ -87,36 +66,16 @@ const App = () => (
                 <div>
                   <h3 className="font-bold mb-4">QUICK_LINKS</h3>
                   <div className="space-y-2 text-sm">
-                    <ScrollLink 
-                      to="services" 
-                      smooth={true} 
-                      duration={500} 
-                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
-                    >
+                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
                       {'> SERVICES'}
                     </ScrollLink>
-                    <ScrollLink 
-                      to="portfolio" 
-                      smooth={true} 
-                      duration={500} 
-                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
-                    >
+                    <ScrollLink to="portfolio" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
                       {'> PORTFOLIO'}
                     </ScrollLink>
-                    <ScrollLink 
-                      to="process" 
-                      smooth={true} 
-                      duration={500} 
-                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
-                    >
+                    <ScrollLink to="process" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
                       {'> PROCESS'}
                     </ScrollLink>
-                    <ScrollLink 
-                      to="contact" 
-                      smooth={true} 
-                      duration={500} 
-                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
-                    >
+                    <ScrollLink to="contact" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
                       {'> CONTACT'}
                     </ScrollLink>
                   </div>
@@ -124,52 +83,22 @@ const App = () => (
                 <div>
                   <h3 className="font-bold mb-4">SERVICES</h3>
                   <div className="space-y-2 text-sm">
-                    <ScrollLink 
-                      to="services" 
-                      smooth={true} 
-                      duration={500} 
-                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
-                    >
+                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
                       {'> WEBSITE DEVELOPMENT'}
                     </ScrollLink>
-                    <ScrollLink 
-                      to="services" 
-                      smooth={true} 
-                      duration={500} 
-                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
-                    >
+                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
                       {'> WEB3 INTEGRATION'}
                     </ScrollLink>
-                    <ScrollLink 
-                      to="services" 
-                      smooth={true} 
-                      duration={500} 
-                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
-                    >
+                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
                       {'> COMMUNITY PLATFORM'}
                     </ScrollLink>
-                    <ScrollLink 
-                      to="services" 
-                      smooth={true} 
-                      duration={500} 
-                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
-                    >
+                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
                       {'> SECURITY IMPLEMENTATION'}
                     </ScrollLink>
-                    <ScrollLink 
-                      to="services" 
-                      smooth={true} 
-                      duration={500} 
-                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
-                    >
+                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
                       {'> PERFORMANCE ANALYTICS'}
                     </ScrollLink>
-                    <ScrollLink 
-                      to="services" 
-                      smooth={true} 
-                      duration={500} 
-                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
-                    >
+                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
                       {'> TECHNICAL OPERATIONS'}
                     </ScrollLink>
                   </div>
@@ -201,7 +130,5 @@ const App = () => (
         </div>
       </div>
     </TooltipProvider>
-  </QueryClientProvider>
-);
-
+  </QueryClientProvider>;
 export default App;
