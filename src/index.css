@@ -27,12 +27,28 @@
     @apply border-neon-green/20 selection:bg-neon-green/20 selection:text-neon-green;
   }
 
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply bg-cyber-dark text-neon-green antialiased font-mono relative min-h-screen overflow-x-hidden;
   }
 
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl;
+  }
+
   .cyber-card {
-    @apply relative bg-cyber-card border border-cyber-border rounded-lg backdrop-blur-sm p-6 transition-all duration-300 hover:border-neon-green/30 hover:shadow-[0_0_20px_rgba(0,255,157,0.2)];
+    @apply relative bg-cyber-card border border-cyber-border rounded-lg backdrop-blur-sm p-4 sm:p-6 transition-all duration-300 hover:border-neon-green/30 hover:shadow-[0_0_20px_rgba(0,255,157,0.2)];
   }
 
   .status-dot {
@@ -45,5 +61,20 @@
 
   .matrix-bg {
     @apply fixed inset-0 z-0 opacity-20;
+  }
+
+  /* Responsive container padding */
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Responsive grid layouts */
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  /* Responsive text sizes */
+  .text-responsive {
+    @apply text-base sm:text-lg lg:text-xl;
   }
 }

@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,8 +13,11 @@ import PortfolioSection from "./components/PortfolioSection";
 import Terminal from "./components/Terminal";
 import ContactSection from "./components/ContactSection";
 import { Twitter, Github, Linkedin, Mail, Globe } from 'lucide-react';
+
 const queryClient = new QueryClient();
-const App = () => <QueryClientProvider client={queryClient}>
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -24,7 +28,7 @@ const App = () => <QueryClientProvider client={queryClient}>
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navigation />
           <main className="flex-grow">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
               <section id="home">
                 <Index />
               </section>
@@ -46,8 +50,8 @@ const App = () => <QueryClientProvider client={queryClient}>
           </main>
 
           <footer className="relative z-20 py-8 mt-24 border-t border-neon-green/20 bg-cyber-dark/95">
-            <div className="max-w-7xl mx-auto px-6">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div>
                   <h3 className="font-bold mb-4">DEGENDESIGNS</h3>
                   <p className="text-sm text-neon-green/60">NeoCode Development Agency specializing in high-performance dApps, DeFi interfaces, and crypto platforms.</p>
@@ -90,7 +94,7 @@ const App = () => <QueryClientProvider client={queryClient}>
                     </ScrollLink>
                   </div>
                 </div>
-                <div className="update it with our services ">
+                <div>
                   <h3 className="font-bold mb-4">SERVICES</h3>
                   <div className="space-y-2 text-sm">
                     <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
@@ -131,14 +135,16 @@ const App = () => <QueryClientProvider client={queryClient}>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row justify-between items-center mt-12 pt-8 border-t border-neon-green/20">
+              <div className="flex flex-col sm:flex-row justify-between items-center mt-12 pt-8 border-t border-neon-green/20">
                 <p className="text-sm text-neon-green/60">SYSTEM_VERSION_2024 | All rights reserved</p>
-                <p className="text-sm text-neon-green/60 mt-4 md:mt-0">GLOBAL_OPERATIONS_ACTIVE</p>
+                <p className="text-sm text-neon-green/60 mt-4 sm:mt-0">GLOBAL_OPERATIONS_ACTIVE</p>
               </div>
             </div>
           </footer>
         </div>
       </div>
     </TooltipProvider>
-  </QueryClientProvider>;
+  </QueryClientProvider>
+);
+
 export default App;
