@@ -11,9 +11,10 @@ import Process from "./pages/Process";
 import PortfolioSection from "./components/PortfolioSection";
 import Terminal from "./components/Terminal";
 import ContactSection from "./components/ContactSection";
-import { Twitter, Github, Linkedin } from 'lucide-react';
+import { Twitter, Github, Linkedin, Mail, Globe } from 'lucide-react';
 const queryClient = new QueryClient();
-const App = () => <QueryClientProvider client={queryClient}>
+const App = () => (
+  <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -50,7 +51,27 @@ const App = () => <QueryClientProvider client={queryClient}>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                   <h3 className="font-bold mb-4">DEGENDESIGNS</h3>
-                  <p className="text-sm text-neon-green/60">NeoCode Development Agency specializing in high-performance dApps, DeFi interfaces, and crypto platforms.</p>
+                  <p className="text-sm text-neon-green/60">
+                    Elite Web3 Development Agency specializing in high-performance dApps, DeFi interfaces, and crypto platforms.
+                  </p>
+                  <div className="space-y-2 mt-4">
+                    <a 
+                      href="mailto:support@neocode.se" 
+                      className="block text-neon-green/60 hover:text-neon-green transition-colors"
+                    >
+                      <Mail className="w-4 h-4 inline-block mr-2" />
+                      support@neocode.se
+                    </a>
+                    <a 
+                      href="https://www.neocode.se" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block text-neon-green/60 hover:text-neon-green transition-colors"
+                    >
+                      <Globe className="w-4 h-4 inline-block mr-2" />
+                      www.neocode.se
+                    </a>
+                  </div>
                   <div className="flex gap-4 mt-4">
                     <a href="https://twitter.com/degendesigns" target="_blank" rel="noopener noreferrer" className="text-neon-green/60 hover:text-neon-green transition-colors">
                       <Twitter className="w-5 h-5" />
@@ -130,5 +151,7 @@ const App = () => <QueryClientProvider client={queryClient}>
         </div>
       </div>
     </TooltipProvider>
-  </QueryClientProvider>;
+  </QueryClientProvider>
+);
+
 export default App;
