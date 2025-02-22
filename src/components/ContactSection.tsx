@@ -1,5 +1,6 @@
+
 import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -24,6 +25,11 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  useEffect(() => {
+    // Initialize EmailJS with your public key
+    emailjs.init("pJpO4TDjdro8YcaQq");
+  }, []);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -45,8 +51,8 @@ const ContactSection = () => {
 
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID', // You'll need to replace this with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // You'll need to replace this with your EmailJS template ID
+        'service_q7jqol7', // Your EmailJS service ID
+        'template_7wuzw9p', // Your EmailJS template ID
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -54,8 +60,7 @@ const ContactSection = () => {
           budget: formData.budget,
           timeline: formData.timeline,
           message: formData.description,
-        },
-        'YOUR_PUBLIC_KEY' // You'll need to replace this with your EmailJS public key
+        }
       );
 
       toast({
@@ -79,6 +84,7 @@ const ContactSection = () => {
         description: "Det gick inte att skicka förfrågan. Försök igen senare.",
         variant: "destructive",
       });
+      console.error('EmailJS error:', error);
     } finally {
       setIsSubmitting(false);
     }
