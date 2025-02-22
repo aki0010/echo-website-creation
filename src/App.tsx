@@ -21,30 +21,36 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <div className="min-h-screen bg-cyber-dark text-neon-green overflow-hidden">
-        <MatrixRain />
-        <div className="relative z-10">
+      <div className="relative min-h-screen bg-cyber-dark text-neon-green">
+        <div className="absolute inset-0 z-0">
+          <MatrixRain />
+        </div>
+        <div className="relative z-10 flex flex-col min-h-screen">
           <Navigation />
-          <div className="max-w-7xl mx-auto px-6">
-            <section id="home">
-              <Index />
-            </section>
-            
-            <section id="services">
-              <Services />
-            </section>
+          <main className="flex-grow">
+            <div className="max-w-7xl mx-auto px-6">
+              <section id="home">
+                <Index />
+              </section>
+              
+              <section id="services">
+                <Services />
+              </section>
 
-            <section id="process">
-              <Process />
-            </section>
+              <section id="process">
+                <Process />
+              </section>
 
-            <PortfolioSection />
-            
-            <Terminal />
+              <PortfolioSection />
+              
+              <Terminal />
 
-            <ContactSection />
+              <ContactSection />
+            </div>
+          </main>
 
-            <footer className="py-8 mt-24 border-t border-neon-green/20">
+          <footer className="relative z-20 py-8 mt-24 border-t border-neon-green/20 bg-cyber-dark/95">
+            <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                   <h3 className="font-bold mb-4">DEGENDESIGNS</h3>
@@ -190,8 +196,8 @@ const App = () => (
                 <p className="text-sm text-neon-green/60">SYSTEM_VERSION_2024 | All rights reserved</p>
                 <p className="text-sm text-neon-green/60 mt-4 md:mt-0">GLOBAL_OPERATIONS_ACTIVE</p>
               </div>
-            </footer>
-          </div>
+            </div>
+          </footer>
         </div>
       </div>
     </TooltipProvider>
