@@ -9,7 +9,7 @@ interface ServiceCardProps {
   title: string;
   type: 'website' | 'web3' | 'analytics' | 'community' | 'security' | 'technical';
   description: string;
-  status: 'READY' | 'INITIALIZING';
+  status: 'REDO' | 'INITIERAR';
   features: ServiceFeature[];
 }
 
@@ -35,7 +35,7 @@ const ServiceCard = ({ title, type, description, status, features }: ServiceCard
             <span className="font-mono">{title.replace(' ', '_')}</span>
           </div>
           <div className={`px-2 py-0.5 rounded-full text-xs border ${
-            status === 'READY' 
+            status === 'REDO' 
               ? 'border-neon-green/30 bg-neon-green/10 text-neon-green' 
               : 'border-neon-purple/30 bg-neon-purple/10 text-neon-purple'
           }`}>
