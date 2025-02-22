@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import StatsCard from '@/components/StatsCard';
 import TechBadge from '@/components/TechBadge';
 import { ArrowRight } from 'lucide-react';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Index = () => {
   return (
@@ -34,10 +35,15 @@ const Index = () => {
             </div>
             
             <div className="flex flex-wrap gap-4 mb-8">
-              <button className="px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300 flex items-center gap-2">
+              <ScrollLink 
+                to="contact" 
+                smooth={true} 
+                duration={500} 
+                className="px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300 flex items-center gap-2 cursor-pointer"
+              >
                 STARTA_PROJEKT
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </ScrollLink>
               <button className="px-6 py-3 bg-neon-purple/10 rounded-lg border border-neon-purple/30 hover:bg-neon-purple/20 transition-all duration-300 flex items-center gap-2">
                 SE_LANSERINGAR
                 <ArrowRight className="w-4 h-4" />
