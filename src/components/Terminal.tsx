@@ -1,13 +1,111 @@
 
 import { useState } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
+
+interface CommandResponse {
+  text: string[];
+  type?: 'success' | 'error' | 'info';
+}
 
 const Terminal = () => {
-  const [commandHistory, setCommandHistory] = useState<string[]>([]);
+  const [commandHistory, setCommandHistory] = useState<{ command: string; response: CommandResponse }[]>([]);
   const [currentCommand, setCurrentCommand] = useState('');
 
+  const executeCommand = (command: string): CommandResponse => {
+    const cmd = command.toLowerCase().trim();
+    
+    switch (cmd) {
+      case 'help':
+        return {
+          text: [
+            '=== TILLGÄNGLIGA KOMMANDON ===',
+            'help     - Visa tillgängliga kommandon',
+            'clear    - Rensa terminalutdata',
+            'stats    - Visa prestandamätriker',
+            'websites - Visa lanserade webbplatser',
+            'contact  - Kontaktinformation',
+            'ratings  - Visa kundbetyg'
+          ],
+          type: 'info'
+        };
+        
+      case 'clear':
+        setCommandHistory([]);
+        return { text: [] };
+        
+      case 'stats':
+        return {
+          text: [
+            '=== PRESTANDA STATISTIK ===',
+            'Webbplatser lanserade: 5+',
+            'Kundnöjdhet: 100%',
+            'Uptime: 99.9%',
+            'Genomsnittlig svarstid: 0.8s',
+            'Säkerhetsrating: A+'
+          ],
+          type: 'success'
+        };
+        
+      case 'websites':
+        return {
+          text: [
+            '=== LANSERADE WEBBPLATSER ===',
+            '> TechCorp Solutions (2024)',
+            '  - Fullstack webbapplikation',
+            '  - React, Node.js, PostgreSQL',
+            '',
+            '> Digital Innovation Hub (2023)',
+            '  - E-handelsplattform',
+            '  - Next.js, Stripe integration',
+            '',
+            '> CyberSec Portal (2023)',
+            '  - Säkerhetsplattform',
+            '  - Zero-trust arkitektur'
+          ],
+          type: 'info'
+        };
+        
+      case 'contact':
+        return {
+          text: [
+            '=== KONTAKTINFORMATION ===',
+            'Email: contact@neocode.dev',
+            'Tel: +46 70 123 45 67',
+            'Plats: Stockholm, Sverige',
+            '',
+            'Kontakta oss för mer information!'
+          ],
+          type: 'info'
+        };
+        
+      case 'ratings':
+        return {
+          text: [
+            '=== KUNDBETYG ===',
+            '★★★★★ TechCorp Solutions',
+            '"Exceptionell service och kvalitet"',
+            '',
+            '★★★★★ Digital Innovation Hub',
+            '"Överträffade alla förväntningar"',
+            '',
+            '★★★★★ CyberSec Portal',
+            '"Professionellt team, utmärkt resultat"'
+          ],
+          type: 'success'
+        };
+        
+      default:
+        return {
+          text: [`Kommando inte hittat: ${command}. Skriv "help" för tillgängliga kommandon.`],
+          type: 'error'
+        };
+    }
+  };
+
   const handleCommand = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      setCommandHistory([...commandHistory, currentCommand]);
+    if (e.key === 'Enter' && currentCommand) {
+      const response = executeCommand(currentCommand);
+      setCommandHistory([...commandHistory, { command: currentCommand, response }]);
       setCurrentCommand('');
     }
   };
@@ -22,20 +120,33 @@ const Terminal = () => {
       </div>
       <div className="p-4 font-mono text-sm">
         <div className="mb-4">
-          <p>=== AVAILABLE COMMANDS ===</p>
-          <p className="text-neon-green">help - Show available commands</p>
-          <p className="text-neon-green">clear - Clear terminal output</p>
-          <p className="text-neon-green">stats - View performance metrics</p>
-          <p className="text-neon-green">websites - View launched websites</p>
-          <p className="text-neon-green">contact - Contact information</p>
-          <p className="text-neon-green">ratings - View client ratings</p>
+          <p>=== TILLGÄNGLIGA KOMMANDON ===</p>
+          <p className="text-neon-green">help - Visa tillgängliga kommandon</p>
+          <p className="text-neon-green">clear - Rensa terminalutdata</p>
+          <p className="text-neon-green">stats - Visa prestandamätriker</p>
+          <p className="text-neon-green">websites - Visa lanserade webbplatser</p>
+          <p className="text-neon-green">contact - Kontaktinformation</p>
+          <p className="text-neon-green">ratings - Visa kundbetyg</p>
         </div>
-        {commandHistory.map((cmd, index) => (
-          <div key={index} className="mb-2">
-            <span className="text-neon-green/60">{`> ${cmd}`}</span>
-            <p>Command not found. Type "help" for available commands.</p>
+        
+        {commandHistory.map((entry, index) => (
+          <div key={index} className="mb-4">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-neon-green/60">{'>'}</span>
+              <span className="text-neon-green">{entry.command}</span>
+            </div>
+            <div className={`pl-4 ${
+              entry.response.type === 'error' ? 'text-red-400' :
+              entry.response.type === 'success' ? 'text-neon-green' :
+              'text-neon-green/80'
+            }`}>
+              {entry.response.text.map((line, i) => (
+                <p key={i}>{line}</p>
+              ))}
+            </div>
           </div>
         ))}
+        
         <div className="flex items-center gap-2">
           <span className="text-neon-green/60">{'>'}</span>
           <input
@@ -44,7 +155,8 @@ const Terminal = () => {
             onChange={(e) => setCurrentCommand(e.target.value)}
             onKeyDown={handleCommand}
             className="bg-transparent border-none outline-none text-neon-green w-full"
-            placeholder="Type a command..."
+            placeholder="Skriv ett kommando..."
+            spellCheck="false"
           />
         </div>
       </div>
