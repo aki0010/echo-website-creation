@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Link as ScrollLink } from 'react-scroll';
 import Navigation from "./components/Navigation";
 import MatrixRain from "./components/MatrixRain";
 import Index from "./pages/Index";
@@ -11,6 +12,7 @@ import Process from "./pages/Process";
 import PortfolioSection from "./components/PortfolioSection";
 import Terminal from "./components/Terminal";
 import ContactSection from "./components/ContactSection";
+import { Twitter, Github, Linkedin } from 'lucide-react';
 
 const queryClient = new QueryClient();
 
@@ -43,54 +45,150 @@ const App = () => (
             <ContactSection />
 
             <footer className="py-8 mt-24 border-t border-neon-green/20">
-              <div className="grid grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                   <h3 className="font-bold mb-4">DEGENDESIGNS</h3>
                   <p className="text-sm text-neon-green/60">
                     Elite Web3 Development Agency specializing in high-performance dApps, DeFi interfaces, and crypto platforms.
                   </p>
+                  <div className="flex gap-4 mt-4">
+                    <a 
+                      href="https://twitter.com/degendesigns" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-neon-green/60 hover:text-neon-green transition-colors"
+                    >
+                      <Twitter className="w-5 h-5" />
+                    </a>
+                    <a 
+                      href="https://github.com/degendesigns" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-neon-green/60 hover:text-neon-green transition-colors"
+                    >
+                      <Github className="w-5 h-5" />
+                    </a>
+                    <a 
+                      href="https://linkedin.com/company/degendesigns" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-neon-green/60 hover:text-neon-green transition-colors"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  </div>
                 </div>
                 <div>
                   <h3 className="font-bold mb-4">QUICK_LINKS</h3>
                   <div className="space-y-2 text-sm">
-                    <p className="text-neon-green/60">{'> SERVICES'}</p>
-                    <p className="text-neon-green/60">{'> PORTFOLIO'}</p>
-                    <p className="text-neon-green/60">{'> PROCESS'}</p>
-                    <p className="text-neon-green/60">{'> CONTACT'}</p>
+                    <ScrollLink 
+                      to="services" 
+                      smooth={true} 
+                      duration={500} 
+                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
+                    >
+                      {'> SERVICES'}
+                    </ScrollLink>
+                    <ScrollLink 
+                      to="portfolio" 
+                      smooth={true} 
+                      duration={500} 
+                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
+                    >
+                      {'> PORTFOLIO'}
+                    </ScrollLink>
+                    <ScrollLink 
+                      to="process" 
+                      smooth={true} 
+                      duration={500} 
+                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
+                    >
+                      {'> PROCESS'}
+                    </ScrollLink>
+                    <ScrollLink 
+                      to="contact" 
+                      smooth={true} 
+                      duration={500} 
+                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
+                    >
+                      {'> CONTACT'}
+                    </ScrollLink>
                   </div>
                 </div>
                 <div>
                   <h3 className="font-bold mb-4">SERVICES</h3>
                   <div className="space-y-2 text-sm">
-                    <p className="text-neon-green/60">{'> WEBSITE DEVELOPMENT'}</p>
-                    <p className="text-neon-green/60">{'> WEB3 INTEGRATION'}</p>
-                    <p className="text-neon-green/60">{'> COMMUNITY PLATFORM'}</p>
-                    <p className="text-neon-green/60">{'> SECURITY IMPLEMENTATION'}</p>
-                    <p className="text-neon-green/60">{'> PERFORMANCE ANALYTICS'}</p>
-                    <p className="text-neon-green/60">{'> TECHNICAL OPERATIONS'}</p>
+                    <ScrollLink 
+                      to="services" 
+                      smooth={true} 
+                      duration={500} 
+                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
+                    >
+                      {'> WEBSITE DEVELOPMENT'}
+                    </ScrollLink>
+                    <ScrollLink 
+                      to="services" 
+                      smooth={true} 
+                      duration={500} 
+                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
+                    >
+                      {'> WEB3 INTEGRATION'}
+                    </ScrollLink>
+                    <ScrollLink 
+                      to="services" 
+                      smooth={true} 
+                      duration={500} 
+                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
+                    >
+                      {'> COMMUNITY PLATFORM'}
+                    </ScrollLink>
+                    <ScrollLink 
+                      to="services" 
+                      smooth={true} 
+                      duration={500} 
+                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
+                    >
+                      {'> SECURITY IMPLEMENTATION'}
+                    </ScrollLink>
+                    <ScrollLink 
+                      to="services" 
+                      smooth={true} 
+                      duration={500} 
+                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
+                    >
+                      {'> PERFORMANCE ANALYTICS'}
+                    </ScrollLink>
+                    <ScrollLink 
+                      to="services" 
+                      smooth={true} 
+                      duration={500} 
+                      className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors"
+                    >
+                      {'> TECHNICAL OPERATIONS'}
+                    </ScrollLink>
                   </div>
                 </div>
                 <div>
                   <h3 className="font-bold mb-4">SYSTEM_STATUS</h3>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center group cursor-pointer">
                       <span className="text-neon-green/60">MAINNET</span>
-                      <span className="text-neon-green">OPERATIONAL ●</span>
+                      <span className="text-neon-green group-hover:animate-pulse">OPERATIONAL ●</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center group cursor-pointer">
                       <span className="text-neon-green/60">SECURITY</span>
-                      <span className="text-neon-green">OPTIMAL ●</span>
+                      <span className="text-neon-green group-hover:animate-pulse">OPTIMAL ●</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center group cursor-pointer">
                       <span className="text-neon-green/60">UPTIME</span>
-                      <span className="text-neon-green">99.99% ●</span>
+                      <span className="text-neon-green group-hover:animate-pulse">99.99% ●</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="flex justify-between items-center mt-12 pt-8 border-t border-neon-green/20">
+              <div className="flex flex-col md:flex-row justify-between items-center mt-12 pt-8 border-t border-neon-green/20">
                 <p className="text-sm text-neon-green/60">SYSTEM_VERSION_2024 | All rights reserved</p>
-                <p className="text-sm text-neon-green/60">GLOBAL_OPERATIONS_ACTIVE</p>
+                <p className="text-sm text-neon-green/60 mt-4 md:mt-0">GLOBAL_OPERATIONS_ACTIVE</p>
               </div>
             </footer>
           </div>
