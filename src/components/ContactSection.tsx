@@ -1,6 +1,7 @@
-
 import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/hooks/use-toast";
 import {
   Dialog,
   DialogContent,
@@ -20,12 +21,67 @@ const ContactSection = () => {
     timeline: '',
     description: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleSubmit = async () => {
+    if (!formData.name || !formData.email || !formData.description) {
+      toast({
+        title: "Validering misslyckades",
+        description: "Vänligen fyll i alla obligatoriska fält.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // You'll need to replace this with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // You'll need to replace this with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          project_type: formData.projectType,
+          budget: formData.budget,
+          timeline: formData.timeline,
+          message: formData.description,
+        },
+        'YOUR_PUBLIC_KEY' // You'll need to replace this with your EmailJS public key
+      );
+
+      toast({
+        title: "Förfrågan skickad!",
+        description: "Vi återkommer till dig så snart som möjligt.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        projectType: '',
+        budget: '',
+        timeline: '',
+        description: ''
+      });
+
+    } catch (error) {
+      toast({
+        title: "Ett fel uppstod",
+        description: "Det gick inte att skicka förfrågan. Försök igen senare.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -175,13 +231,17 @@ const ContactSection = () => {
 
                     <button 
                       className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300"
-                      onClick={() => {
-                        // Handle form submission here
-                        console.log('Form data:', formData);
-                      }}
+                      onClick={handleSubmit}
+                      disabled={isSubmitting}
                     >
-                      SKICKA_FÖRFRÅGAN
-                      <Send className="w-4 h-4" />
+                      {isSubmitting ? (
+                        <span>SKICKAR...</span>
+                      ) : (
+                        <>
+                          SKICKA_FÖRFRÅGAN
+                          <Send className="w-4 h-4" />
+                        </>
+                      )}
                     </button>
                   </div>
                 </DialogContent>
