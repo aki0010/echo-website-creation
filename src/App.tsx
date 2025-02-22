@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,7 +11,7 @@ import Process from "./pages/Process";
 import PortfolioSection from "./components/PortfolioSection";
 import Terminal from "./components/Terminal";
 import ContactSection from "./components/ContactSection";
-import { Twitter, Github, Linkedin, Mail, Globe } from 'lucide-react';
+import { Twitter, Github, Linkedin, Mail, Globe, ArrowRight } from 'lucide-react';
 
 const queryClient = new QueryClient();
 
@@ -80,40 +79,80 @@ const App = () => (
                 <div>
                   <h3 className="font-bold mb-4">QUICK_LINKS</h3>
                   <div className="space-y-2 text-sm">
-                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
-                      {'> SERVICES'}
+                    <ScrollLink to="services" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
+                      <span className="flex items-center">
+                        <span className="mr-2">{'>'}</span>
+                        <span className="flex-grow">SERVICES</span>
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      </span>
                     </ScrollLink>
-                    <ScrollLink to="portfolio" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
-                      {'> PORTFOLIO'}
+                    <ScrollLink to="portfolio" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
+                      <span className="flex items-center">
+                        <span className="mr-2">{'>'}</span>
+                        <span className="flex-grow">PORTFOLIO</span>
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      </span>
                     </ScrollLink>
-                    <ScrollLink to="process" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
-                      {'> PROCESS'}
+                    <ScrollLink to="process" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
+                      <span className="flex items-center">
+                        <span className="mr-2">{'>'}</span>
+                        <span className="flex-grow">PROCESS</span>
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      </span>
                     </ScrollLink>
-                    <ScrollLink to="contact" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
-                      {'> CONTACT'}
+                    <ScrollLink to="contact" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
+                      <span className="flex items-center">
+                        <span className="mr-2">{'>'}</span>
+                        <span className="flex-grow">CONTACT</span>
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      </span>
                     </ScrollLink>
                   </div>
                 </div>
                 <div>
                   <h3 className="font-bold mb-4">SERVICES</h3>
                   <div className="space-y-2 text-sm">
-                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
-                      {'> WEBSITE DEVELOPMENT'}
+                    <ScrollLink to="services" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
+                      <span className="flex items-center">
+                        <span className="mr-2">{'>'}</span>
+                        <span className="flex-grow">WEBSITE DEVELOPMENT</span>
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      </span>
                     </ScrollLink>
-                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
-                      {'> WEB3 INTEGRATION'}
+                    <ScrollLink to="services" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
+                      <span className="flex items-center">
+                        <span className="mr-2">{'>'}</span>
+                        <span className="flex-grow">WEB3 INTEGRATION</span>
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      </span>
                     </ScrollLink>
-                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
-                      {'> COMMUNITY PLATFORM'}
+                    <ScrollLink to="services" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
+                      <span className="flex items-center">
+                        <span className="mr-2">{'>'}</span>
+                        <span className="flex-grow">COMMUNITY PLATFORM</span>
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      </span>
                     </ScrollLink>
-                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
-                      {'> SECURITY IMPLEMENTATION'}
+                    <ScrollLink to="services" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
+                      <span className="flex items-center">
+                        <span className="mr-2">{'>'}</span>
+                        <span className="flex-grow">SECURITY IMPLEMENTATION</span>
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      </span>
                     </ScrollLink>
-                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
-                      {'> PERFORMANCE ANALYTICS'}
+                    <ScrollLink to="services" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
+                      <span className="flex items-center">
+                        <span className="mr-2">{'>'}</span>
+                        <span className="flex-grow">PERFORMANCE ANALYTICS</span>
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      </span>
                     </ScrollLink>
-                    <ScrollLink to="services" smooth={true} duration={500} className="block text-neon-green/60 hover:text-neon-green cursor-pointer transition-colors">
-                      {'> TECHNICAL OPERATIONS'}
+                    <ScrollLink to="services" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
+                      <span className="flex items-center">
+                        <span className="mr-2">{'>'}</span>
+                        <span className="flex-grow">TECHNICAL OPERATIONS</span>
+                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                      </span>
                     </ScrollLink>
                   </div>
                 </div>
