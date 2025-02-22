@@ -1,5 +1,5 @@
 
-import { Mail, MessageSquare, Twitter, Bot } from 'lucide-react';
+import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
 
 const ContactSection = () => {
   return (
@@ -21,6 +21,45 @@ const ContactSection = () => {
             <div className="flex items-center gap-2">
               <Bot className="w-4 h-4" />
               <span className="text-sm">Secure Channel</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Consultation Booking Section */}
+        <div className="cyber-card mb-8">
+          <h3 className="text-2xl font-bold mb-6">BOKA_KONSULTATION</h3>
+          <p className="text-neon-green/80 mb-8">
+            Ta första steget mot din digitala transformation. Boka en kostnadsfri 
+            30-minuters konsultation med våra experter.
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <Calendar className="w-5 h-5 text-neon-green" />
+                <span>Flexibla tider tillgängliga</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Clock className="w-5 h-5 text-neon-green" />
+                <span>30 minuters kostnadsfri session</span>
+              </div>
+            </div>
+            
+            <div className="flex flex-col gap-4">
+              <input
+                type="text"
+                placeholder="Ditt namn"
+                className="bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
+              />
+              <input
+                type="email"
+                placeholder="Din e-post"
+                className="bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
+              />
+              <button className="flex items-center justify-center gap-2 px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300">
+                BOKA_NU
+                <Send className="w-4 h-4" />
+              </button>
             </div>
           </div>
         </div>

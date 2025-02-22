@@ -3,7 +3,7 @@ import MatrixRain from '@/components/MatrixRain';
 import Navigation from '@/components/Navigation';
 import StatsCard from '@/components/StatsCard';
 import TechBadge from '@/components/TechBadge';
-import { ArrowRight, Calendar, Clock, Send } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Index = () => {
   return (
@@ -49,47 +49,6 @@ const Index = () => {
               <TechBadge name="RESPONSIV" />
               <TechBadge name="UI/UX" />
               <TechBadge name="PRESTANDA" />
-            </div>
-          </section>
-
-          {/* Consultation Booking Section */}
-          <section className="max-w-7xl mx-auto mb-24">
-            <div className="cyber-card p-8">
-              <h2 className="text-3xl font-bold mb-6">BOKA_KONSULTATION</h2>
-              <p className="text-neon-green/80 mb-8">
-                Ta första steget mot din digitala transformation. Boka en kostnadsfri 
-                30-minuters konsultation med våra experter.
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-3">
-                    <Calendar className="w-5 h-5 text-neon-green" />
-                    <span>Flexibla tider tillgängliga</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-neon-green" />
-                    <span>30 minuters kostnadsfri session</span>
-                  </div>
-                </div>
-                
-                <div className="flex flex-col gap-4">
-                  <input
-                    type="text"
-                    placeholder="Ditt namn"
-                    className="bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Din e-post"
-                    className="bg-cyber-dark/50 border border-neon-green/30 rounded-lg px-4 py-2 focus:outline-none focus:border-neon-green"
-                  />
-                  <button className="flex items-center justify-center gap-2 px-6 py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300">
-                    BOKA_NU
-                    <Send className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
             </div>
           </section>
 
