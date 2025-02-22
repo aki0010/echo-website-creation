@@ -45,7 +45,7 @@ const Index = () => {
                 <ArrowRight className="w-4 h-4" />
               </ScrollLink>
               <ScrollLink 
-                to="portfolio" 
+                to="lanserade_projekt" 
                 smooth={true} 
                 duration={500} 
                 className="px-6 py-3 bg-neon-purple/10 rounded-lg border border-neon-purple/30 hover:bg-neon-purple/20 transition-all duration-300 flex items-center gap-2 cursor-pointer"
