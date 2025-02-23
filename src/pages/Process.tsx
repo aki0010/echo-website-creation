@@ -67,14 +67,14 @@ const Process = () => {
           <div className="max-w-7xl mx-auto">
             {/* Process Header */}
             <div className="cyber-card p-8 mb-12">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-wrap gap-4">
                 <div className="flex items-center gap-4">
-                  <Code2 className="w-8 h-8 text-neon-green" />
+                  <Code2 className="w-8 h-8 text-neon-green flex-shrink-0" />
                   <div>
-                    <h1 className="text-4xl font-bold">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold break-words">
                       DEVELOPMENT <span className="text-neon-purple">PROCESS</span>
                     </h1>
-                    <p className="text-neon-green/60">WEBSITE_CREATION_ENGINE</p>
+                    <p className="text-neon-green/60 text-sm sm:text-base">WEBSITE_CREATION_ENGINE</p>
                   </div>
                 </div>
                 <div className="px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30">
