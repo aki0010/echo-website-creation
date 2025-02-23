@@ -1,21 +1,12 @@
+
 import MatrixRain from '@/components/MatrixRain';
 import Navigation from '@/components/Navigation';
 import StatsCard from '@/components/StatsCard';
 import TechBadge from '@/components/TechBadge';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link as ScrollLink } from 'react-scroll';
 
 const Index = () => {
-  const seoChecklist = [
-    { title: "Keyword research done", completed: true },
-    { title: "Title tags & meta descriptions optimized", completed: true },
-    { title: "Fast & mobile-friendly website", completed: true },
-    { title: "Internal linking in place", completed: true },
-    { title: "Content is high-quality & regularly updated", completed: true },
-    { title: "Backlinks built from high-authority sites", completed: true },
-    { title: "Tracking SEO performance with Google Search Console & Analytics", completed: true },
-  ];
-
   return (
     <div className="min-h-screen bg-cyber-dark text-neon-green overflow-hidden">
       <MatrixRain />
@@ -85,27 +76,6 @@ const Index = () => {
               value="99.9%"
               label="TILLFÖRLITLIGHET"
             />
-          </section>
-
-          {/* SEO Checklist Section */}
-          <section className="max-w-7xl mx-auto mb-24">
-            <div className="inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6">
-              SEO_OPTIMIZATION
-            </div>
-            <h2 className="text-3xl font-bold mb-8">Final Checklist for SEO Success</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {seoChecklist.map((item, index) => (
-                <div
-                  key={index}
-                  className="cyber-card group p-4 flex items-start gap-4 transition-all duration-300 hover:border-neon-purple hover:shadow-[0_0_20px_rgba(147,51,234,0.2)]"
-                >
-                  <CheckCircle2 className="w-6 h-6 text-neon-purple flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="text-neon-green/90 group-hover:text-neon-green transition-colors duration-300">
-                    {item.title}
-                  </span>
-                </div>
-              ))}
-            </div>
           </section>
         </main>
       </div>
