@@ -41,7 +41,7 @@ const PortfolioSection = () => {
           <span className="text-sm">PROJEKT_GALLERI</span>
         </div>
         
-        <h2 className="text-4xl font-bold mb-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 break-words">
           LANSERADE_<span className="text-neon-purple">PROJEKT</span>
         </h2>
 
