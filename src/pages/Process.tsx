@@ -1,4 +1,3 @@
-
 import Navigation from '@/components/Navigation';
 import MatrixRain from '@/components/MatrixRain';
 import { Palette, Code2, Rocket, Star } from 'lucide-react';
@@ -67,20 +66,18 @@ const Process = () => {
           <div className="max-w-7xl mx-auto">
             {/* Process Header */}
             <div className="cyber-card p-8 mb-12">
-              <div className="flex items-center justify-between flex-wrap gap-4">
-                <div className="flex items-center gap-4">
-                  <Code2 className="w-8 h-8 text-neon-green flex-shrink-0" />
-                  <div>
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold break-words">
-                      DEVELOPMENT <span className="text-neon-purple">PROCESS</span>
-                    </h1>
-                    <p className="text-neon-green/60 text-sm sm:text-base">WEBSITE_CREATION_ENGINE</p>
-                  </div>
+              <div className="grid grid-cols-1 sm:grid-cols-[auto,1fr,auto] items-center gap-4">
+                <Code2 className="w-8 h-8 text-neon-green justify-self-start" />
+                <div className="min-w-0">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold break-words">
+                    DEVELOPMENT <span className="text-neon-purple">PROCESS</span>
+                  </h1>
+                  <p className="text-neon-green/60 text-sm sm:text-base">WEBSITE_CREATION_ENGINE</p>
                 </div>
-                <div className="px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30">
+                <div className="px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 justify-self-start sm:justify-self-end">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse"></div>
-                    <span className="text-sm">SYSTEM_ACTIVE</span>
+                    <span className="text-sm whitespace-nowrap">SYSTEM_ACTIVE</span>
                   </div>
                 </div>
               </div>
@@ -90,7 +87,7 @@ const Process = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {phases.map((phase) => (
                 <div key={phase.number} className="cyber-card flex flex-col h-full">
-                  <div className="flex items-center gap-3 mb-6">
+                  <div className="grid grid-cols-[auto,1fr] gap-3 mb-6">
                     <div className="w-10 h-10 rounded-full bg-neon-green/10 border border-neon-green/30 flex items-center justify-center text-sm">
                       {phase.number}
                     </div>
@@ -104,11 +101,11 @@ const Process = () => {
                   
                   <p className="text-sm text-neon-green/80 mb-6">{phase.description}</p>
 
-                  <div className="space-y-2 mb-6">
+                  <div className="grid gap-2 mb-6">
                     {phase.features.map((feature, index) => (
-                      <div key={index} className="flex items-center gap-2 text-sm">
+                      <div key={index} className="grid grid-cols-[auto,1fr] gap-2 text-sm items-center">
                         <span className="text-neon-green/60">→</span>
-                        {feature}
+                        <span>{feature}</span>
                       </div>
                     ))}
                   </div>
