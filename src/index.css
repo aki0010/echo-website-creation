@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -23,11 +24,19 @@
   }
 
   * {
-    @apply border-neon-green/20 selection:bg-neon-green/20 selection:text-neon-green;
+    @apply border-neon-green/20;
+  }
+
+  *::selection {
+    @apply bg-neon-green/20 text-neon-green;
   }
 
   .color-blind-mode * {
-    @apply border-neon-accessible-primary/20 selection:bg-neon-accessible-primary/20 selection:text-neon-accessible-primary;
+    @apply border-neon-accessible-primary/20;
+  }
+
+  .color-blind-mode *::selection {
+    @apply bg-neon-accessible-primary/20 text-neon-accessible-primary;
   }
 
   html {
@@ -82,17 +91,14 @@
     @apply fixed inset-0 z-0 opacity-20;
   }
 
-  /* Responsive container padding */
   .section-padding {
     @apply py-20 px-4 sm:px-6 lg:px-8;
   }
 
-  /* Responsive grid layouts */
   .responsive-grid {
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
   }
 
-  /* Responsive text sizes */
   .text-responsive {
     @apply text-base sm:text-lg lg:text-xl;
   }
