@@ -3,8 +3,11 @@ import Navigation from '@/components/Navigation';
 import MatrixRain from '@/components/MatrixRain';
 import ServiceCard from '@/components/ServiceCard';
 import { Code2, Database, Cpu, Globe, Boxes, Workflow } from 'lucide-react';
+import { useState } from 'react';
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState<number | null>(null);
+
   const services = [
     {
       title: "Webbdesign & Utveckling",
@@ -122,11 +125,11 @@ const Services = () => {
   return (
     <div id="services" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6">
+        <div className="inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6 color-blind-mode:bg-[rgb(254,198,161)]/10 color-blind-mode:border-[rgb(254,198,161)]/30">
           DIGITAL INNOVATION
         </div>
         <h1 className="text-5xl font-bold mb-6">TJÄNSTER</h1>
-        <p className="text-neon-green/80 mb-12 max-w-2xl">
+        <p className="text-neon-green/80 mb-12 max-w-2xl color-blind-mode:text-[rgb(254,198,161)]/80">
           Vi är experter på att skapa digitala lösningar som hjälper företag att växa online. 
           Med vårt unika "betala när du är nöjd"-koncept garanterar vi högsta kvalitet och kundnöjdhet.
         </p>
@@ -140,6 +143,8 @@ const Services = () => {
               description={service.description}
               status={service.status}
               features={service.features}
+              selected={selectedService === index}
+              onClick={() => setSelectedService(index === selectedService ? null : index)}
             />
           ))}
         </div>
@@ -151,24 +156,27 @@ const Services = () => {
             {expertiseAreas.map((area, index) => {
               const Icon = area.icon;
               return (
-                <div key={index} className="cyber-card group hover:scale-[1.02] transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-neon-green/10 border border-neon-green/30 group-hover:bg-neon-green/20 transition-colors">
-                      <Icon className="w-6 h-6 text-neon-green" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl mb-2">{area.title}</h3>
-                      <p className="text-sm text-neon-green/60 mb-4">{area.description}</p>
-                      <div className="grid grid-cols-2 gap-2">
-                        {area.skills.map((skill, skillIndex) => (
-                          <div 
-                            key={skillIndex}
-                            className="flex items-center gap-2 text-sm text-neon-green/80"
-                          >
-                            <span className="w-1.5 h-1.5 bg-neon-green/50 rounded-full"></span>
-                            {skill}
-                          </div>
-                        ))}
+                <div key={index} className="relative group cursor-pointer transition-all duration-300 hover:scale-[1.02]">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-neon-green/20 to-transparent blur opacity-75 group-hover:opacity-100 transition-all duration-300 color-blind-mode:from-[rgb(254,198,161)]/20" />
+                  <div className="cyber-card group h-full relative bg-cyber-dark/95">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 rounded-lg bg-neon-green/10 border border-neon-green/30 group-hover:bg-neon-green/20 transition-colors color-blind-mode:bg-[rgb(254,198,161)]/10 color-blind-mode:border-[rgb(254,198,161)]/30 color-blind-mode:group-hover:bg-[rgb(254,198,161)]/20">
+                        <Icon className="w-6 h-6 text-neon-green color-blind-mode:text-[rgb(254,198,161)]" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl mb-2 group-hover:text-neon-green transition-colors color-blind-mode:group-hover:text-[rgb(254,198,161)]">{area.title}</h3>
+                        <p className="text-sm text-neon-green/60 mb-4 group-hover:text-neon-green/80 transition-colors color-blind-mode:text-[rgb(254,198,161)]/60 color-blind-mode:group-hover:text-[rgb(254,198,161)]/80">{area.description}</p>
+                        <div className="grid grid-cols-2 gap-2">
+                          {area.skills.map((skill, skillIndex) => (
+                            <div 
+                              key={skillIndex}
+                              className="flex items-center gap-2 text-sm text-neon-green/80 group-hover:text-neon-green transition-colors color-blind-mode:text-[rgb(254,198,161)]/80 color-blind-mode:group-hover:text-[rgb(254,198,161)]"
+                            >
+                              <span className="w-1.5 h-1.5 bg-neon-green/50 rounded-full group-hover:bg-neon-green transition-colors color-blind-mode:bg-[rgb(254,198,161)]/50 color-blind-mode:group-hover:bg-[rgb(254,198,161)]"></span>
+                              {skill}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
