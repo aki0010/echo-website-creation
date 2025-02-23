@@ -28,7 +28,7 @@ const ColorModeToggle = ({ className = '' }: ColorModeToggleProps) => {
       onClick={toggleColorMode}
       className={`flex items-center gap-2 px-3 py-1 rounded-full transition-colors ${
         isColorBlindMode 
-          ? 'bg-neon-accessible-primary/20 border border-neon-accessible-primary/30 text-neon-accessible-primary' 
+          ? 'bg-[rgb(254,198,161)]/20 border border-[rgb(254,198,161)]/30 text-[rgb(254,198,161)]' 
           : 'bg-neon-green/10 border border-neon-green/30 text-neon-green'
       } ${className}`}
     >

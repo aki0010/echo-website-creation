@@ -34,7 +34,10 @@ const config = {
         cyber: {
           dark: "#0A0A0A",
           card: "rgba(16, 16, 16, 0.6)",
-          border: "rgba(0, 255, 157, 0.2)"
+          border: {
+            DEFAULT: "rgba(0, 255, 157, 0.2)",
+            accessible: "rgba(254, 198, 161, 0.2)"
+          }
         }
       },
       fontFamily: {
@@ -52,16 +55,16 @@ const config = {
           "100%": { transform: "translateY(100%)" },
         },
         glow: {
-          "0%": { textShadow: "0 0 5px rgba(0, 255, 157, 0.5)" },
-          "100%": { textShadow: "0 0 20px rgba(0, 255, 157, 0.8), 0 0 30px rgba(0, 255, 157, 0.6)" },
+          "0%": { textShadow: "0 0 5px rgba(254, 198, 161, 0.5)" },
+          "100%": { textShadow: "0 0 20px rgba(254, 198, 161, 0.8), 0 0 30px rgba(254, 198, 161, 0.6)" },
         },
         fadeUp: {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         pulseGlow: {
-          "0%, 100%": { boxShadow: "0 0 5px rgba(0, 255, 157, 0.5)" },
-          "50%": { boxShadow: "0 0 20px rgba(0, 255, 157, 0.8), 0 0 30px rgba(0, 255, 157, 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 5px rgba(254, 198, 161, 0.5)" },
+          "50%": { boxShadow: "0 0 20px rgba(254, 198, 161, 0.8), 0 0 30px rgba(254, 198, 161, 0.6)" },
         },
       },
     },
