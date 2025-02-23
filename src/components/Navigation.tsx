@@ -2,6 +2,7 @@
 import { Link } from 'react-scroll';
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
+import ColorModeToggle from './ColorModeToggle';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,6 +32,7 @@ const Navigation = () => {
           <Link to="services" smooth={true} duration={500} className="text-neon-green/80 hover:text-neon-green cursor-pointer">TJÄNSTER</Link>
           <Link to="process" smooth={true} duration={500} className="text-neon-green/80 hover:text-neon-green cursor-pointer">PROCESS</Link>
           <Link to="contact" smooth={true} duration={500} className="text-neon-green/80 hover:text-neon-green cursor-pointer">KONTAKT</Link>
+          <ColorModeToggle />
           <div className="flex items-center gap-2 px-3 py-1 bg-neon-green/10 rounded-full border border-neon-green/30">
             <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse"></div>
             <span className="text-sm">SYSTEM_ONLINE</span>
@@ -68,6 +70,7 @@ const Navigation = () => {
               >
                 KONTAKT
               </Link>
+              <ColorModeToggle />
               <div className="flex items-center gap-2 px-3 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 w-fit">
                 <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse"></div>
                 <span className="text-sm">SYSTEM_ONLINE</span>
