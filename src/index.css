@@ -24,19 +24,19 @@
   }
 
   * {
-    @apply border-neon-green/20;
+    @apply border-neon-green border-opacity-20;
   }
 
   *::selection {
-    @apply bg-neon-green/20 text-neon-green;
+    @apply bg-neon-green bg-opacity-20 text-neon-green;
   }
 
   .color-blind-mode * {
-    @apply border-neon-accessible-primary/20;
+    @apply border-[rgb(254,198,161)] border-opacity-20;
   }
 
   .color-blind-mode *::selection {
-    @apply bg-neon-accessible-primary/20 text-neon-accessible-primary;
+    @apply bg-[rgb(254,198,161)] bg-opacity-20 text-[rgb(254,198,161)];
   }
 
   html {
@@ -48,19 +48,19 @@
   }
 
   .color-blind-mode .text-neon-green {
-    @apply text-neon-accessible-primary;
+    @apply text-[rgb(254,198,161)];
   }
 
   .color-blind-mode .bg-neon-green\/10 {
-    @apply bg-neon-accessible-primary/10;
+    @apply bg-[rgb(254,198,161)] bg-opacity-10;
   }
 
   .color-blind-mode .border-neon-green\/30 {
-    @apply border-neon-accessible-primary/30;
+    @apply border-[rgb(254,198,161)] border-opacity-30;
   }
 
   .color-blind-mode .text-neon-purple {
-    @apply text-neon-accessible-secondary;
+    @apply text-[rgb(211,228,253)];
   }
 
   h1 {
@@ -76,7 +76,7 @@
   }
 
   .cyber-card {
-    @apply relative bg-cyber-card border border-cyber-border rounded-lg backdrop-blur-sm p-4 sm:p-6 transition-all duration-300 hover:border-neon-green/30 hover:shadow-[0_0_20px_rgba(0,255,157,0.2)];
+    @apply relative bg-cyber-card border border-cyber-border rounded-lg backdrop-blur-sm p-4 sm:p-6 transition-all duration-300 hover:border-neon-green hover:border-opacity-30 hover:shadow-[0_0_20px_rgba(0,255,157,0.2)];
   }
 
   .status-dot {

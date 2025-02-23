@@ -1,6 +1,7 @@
+
 import type { Config } from "tailwindcss"
 
-export default {
+const config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -21,14 +22,13 @@ export default {
       colors: {
         border: "rgb(var(--border) / <alpha-value>)",
         neon: {
-          green: "#00FF9D",
-          purple: "#9D00FF",
-          blue: "#00F0FF",
-          // Color blind friendly alternatives
+          green: "rgb(0 255 157 / <alpha-value>)",
+          purple: "rgb(157 0 255 / <alpha-value>)",
+          blue: "rgb(0 240 255 / <alpha-value>)",
           accessible: {
-            primary: "#FEC6A1",    // Soft orange - easily distinguishable
-            secondary: "#D3E4FD",  // Soft blue
-            accent: "#FEF7CD"      // Soft yellow
+            primary: "rgb(254 198 161 / <alpha-value>)",    // Soft orange
+            secondary: "rgb(211 228 253 / <alpha-value>)",  // Soft blue
+            accent: "rgb(254 247 205 / <alpha-value>)"      // Soft yellow
           }
         },
         cyber: {
@@ -68,3 +68,5 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config
+
+export default config
