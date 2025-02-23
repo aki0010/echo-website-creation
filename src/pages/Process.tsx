@@ -1,4 +1,5 @@
 
+import React from 'react';
 import Navigation from '@/components/Navigation';
 import MatrixRain from '@/components/MatrixRain';
 import { Palette, Code2, Rocket, Star } from 'lucide-react';
