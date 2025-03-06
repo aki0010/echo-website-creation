@@ -1,5 +1,5 @@
 
-import { ArrowUpRight, Github, Globe, Shield, Zap, CreditCard } from 'lucide-react';
+import { ArrowUpRight, Github, Globe, Shield, Zap, CreditCard, Server, Lock, Download, Upload, Smartphone } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -16,6 +16,45 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    title: "Hexo VPN",
+    description: "Fast and reliable VPN application with just one tap to connect. Focuses on privacy, internet browsing and gaming experience with a point-based subscription system.",
+    tags: ["Android", "Privacy", "VPN"],
+    liveUrl: "https://apkcombo.com/hexo-vpn/com.hexovpn.app/",
+    imageUrl: "/lovable-uploads/3fc3ee27-61dd-49af-ac54-2854e9c1e9fe.png",
+    features: [
+      {
+        icon: <Zap className="w-4 h-4 text-neon-purple" />,
+        title: "Fast Connection",
+        description: "Fast and reliable connection with best ping for gaming."
+      },
+      {
+        icon: <Server className="w-4 h-4 text-neon-purple" />,
+        title: "Large Server Network",
+        description: "Access to large number of servers with ability to suggest new locations."
+      },
+      {
+        icon: <Lock className="w-4 h-4 text-neon-purple" />,
+        title: "Privacy Focused",
+        description: "Add your favorite DNS server or choose from best DNS servers for enhanced privacy."
+      },
+      {
+        icon: <Download className="w-4 h-4 text-neon-purple" />,
+        title: "High Speed Streaming",
+        description: "Download and stream videos with high speed connection, no time limits."
+      },
+      {
+        icon: <Smartphone className="w-4 h-4 text-neon-purple" />,
+        title: "Wide Compatibility",
+        description: "Compatible with WiFi, LTE, 3G, and all mobile data carriers."
+      },
+      {
+        icon: <Globe className="w-4 h-4 text-neon-purple" />,
+        title: "Unrestricted Access",
+        description: "Access blocked and geo-restricted content with unlimited free usage."
+      }
+    ]
+  },
   {
     title: "Hexacard",
     description: "Digital card management application with secure transactions and real-time monitoring. Optimized for modern financial needs.",
@@ -45,13 +84,6 @@ const projects: Project[] = [
     description: "Modern e-handelsplattform byggd med Next.js och Stripe integration. Optimerad för prestanda och konvertering.",
     tags: ["Next.js", "Stripe", "TailwindCSS"],
     liveUrl: "https://example-shop.com",
-    imageUrl: "/placeholder.svg"
-  },
-  {
-    title: "SaaS Dashboard",
-    description: "Administrativt dashboard för SaaS-företag med realtidsanalyser och användarhantering.",
-    tags: ["React", "TypeScript", "GraphQL"],
-    liveUrl: "https://example-dashboard.com",
     imageUrl: "/placeholder.svg"
   }
 ];
