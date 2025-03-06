@@ -74,11 +74,11 @@ const PortfolioSection = () => {
               key={index}
               className="bg-cyber-dark/50 border border-neon-green/20 rounded-lg overflow-hidden hover:border-neon-green/40 transition-all duration-300"
             >
-              <div className="aspect-video bg-cyber-dark/80 overflow-hidden">
+              <div className="aspect-video bg-cyber-dark/80 overflow-hidden flex items-center justify-center">
                 <img 
                   src={project.imageUrl} 
                   alt={project.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
               
