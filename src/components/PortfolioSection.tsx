@@ -1,4 +1,3 @@
-
 import { ArrowUpRight, Github, Globe, Shield, Zap, CreditCard, Server, Lock, Download, Upload, Smartphone } from 'lucide-react';
 
 interface Project {
@@ -20,7 +19,7 @@ const projects: Project[] = [
     title: "Hexo VPN",
     description: "Fast and reliable VPN application with just one tap to connect. Focuses on privacy, internet browsing and gaming experience with a point-based subscription system.",
     tags: ["Android", "Privacy", "VPN"],
-    liveUrl: "https://apkcombo.com/hexo-vpn/com.hexovpn.app/",
+    liveUrl: "https://apkpure.com/hexo-vpn-fast-and-reliable/com.hala.halavpn",
     imageUrl: "/lovable-uploads/3fc3ee27-61dd-49af-ac54-2854e9c1e9fe.png",
     features: [
       {
