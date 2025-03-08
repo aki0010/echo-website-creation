@@ -10,19 +10,19 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-cyber-dark text-neon-green overflow-hidden">
       <MatrixRain />
-      <div className="relative z-10">
+      <div className="container relative z-10">
         <Navigation />
         
-        <main className="pt-24 px-6">
+        <main className="pt-24">
           {/* Hero Section */}
-          <section className="max-w-7xl mx-auto mb-24">
-            <div className="inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6">
+          <section className="hero mb-24 text-center">
+            <div className="badge">
               NÄSTA_GENERATIONS_INNOVATION
             </div>
             <h1 className="text-6xl md:text-7xl font-bold mb-6">
-              NEO<span className="text-neon-purple">CODE</span>
+              <span className="neo">NEO</span><span className="code">CODE</span>
             </h1>
-            <div className="max-w-2xl mb-8">
+            <div className="description max-w-2xl mx-auto mb-8">
               <h2 className="text-2xl mb-4">
                 Moderna webbplatser.<br />
                 Företagslösningar.
@@ -34,7 +34,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
               <ScrollLink 
                 to="contact" 
                 smooth={true} 
@@ -46,7 +46,7 @@ const Index = () => {
               </ScrollLink>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
               <TechBadge name="MODERNA_TECH" />
               <TechBadge name="RESPONSIV" />
               <TechBadge name="UI/UX" />
@@ -55,7 +55,7 @@ const Index = () => {
           </section>
 
           {/* Stats Grid */}
-          <section className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
             <StatsCard
               type="websites"
               value="5+"

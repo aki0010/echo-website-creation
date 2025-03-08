@@ -44,8 +44,8 @@ const ServiceCard = ({
       )}
       onClick={onClick}
     >
-      <div className="cyber-card relative h-full flex flex-col bg-cyber-dark/95">
-        <div className="flex items-center justify-between mb-2">
+      <div className="service-card h-full flex flex-col">
+        <div className="service-header flex items-center justify-between mb-4">
           <div className="service-title text-neon-green">
             <span>{'>'}</span>
             <span className="font-mono">{title}</span>
@@ -62,14 +62,14 @@ const ServiceCard = ({
           <Icon className="w-6 h-6" />
         </div>
         
-        <h3 className="service-name text-neon-blue">{title}</h3>
+        <h3 className="service-name">{title}</h3>
         
         <p className="service-desc">
           {description}
         </p>
         
         <div className="mt-auto">
-          <div className="space-y-2">
+          <div className="features space-y-2">
             {features.map((feature, index) => (
               <div 
                 key={index} 
