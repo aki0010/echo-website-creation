@@ -72,7 +72,8 @@ const MatrixRain = () => {
         ref={rainColumnsRef}
         className="fixed inset-0 z-0 pointer-events-none opacity-10"
       />
-      <style jsx>{`
+      <style>
+        {`
         .rain-column {
           position: absolute;
           top: -100px;
@@ -82,7 +83,8 @@ const MatrixRain = () => {
           animation: rain linear infinite;
           opacity: 0.5;
         }
-      `}</style>
+        `}
+      </style>
     </>
   );
 };
