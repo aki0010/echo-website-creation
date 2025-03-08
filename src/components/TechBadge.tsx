@@ -1,14 +1,11 @@
-
 interface TechBadgeProps {
   name: string;
 }
-
-const TechBadge = ({ name }: TechBadgeProps) => {
-  return (
-    <div className="px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 text-sm uppercase text-neon-green">
+const TechBadge = ({
+  name
+}: TechBadgeProps) => {
+  return <div className="bg-neon-green/10 border border-neon-green/30 text-sm uppercase text-neon-green py-[3px] rounded-md px-[14px]">
       {name}
-    </div>
-  );
+    </div>;
 };
-
 export default TechBadge;
