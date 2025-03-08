@@ -13,13 +13,13 @@
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 142 100% 50%;
+    --primary: 168 100% 50%;
     --primary-foreground: 0 0% 0%;
-    --secondary: 270 100% 50%;
+    --secondary: 270 100% 63%;
     --secondary-foreground: 0 0% 98%;
-    --border: 142 100% 50%;
-    --input: 142 100% 50%;
-    --ring: 142 100% 50%;
+    --border: 168 100% 50%;
+    --input: 168 100% 50%;
+    --ring: 168 100% 50%;
     --radius: 0.5rem;
   }
 
@@ -44,7 +44,18 @@
   }
 
   body {
-    @apply bg-cyber-dark antialiased font-mono relative min-h-screen overflow-x-hidden;
+    @apply bg-cyber-dark antialiased font-mono relative min-h-screen overflow-x-hidden text-cyber-text-primary;
+    background-image: 
+      repeating-linear-gradient(0deg, 
+        rgba(0, 255, 196, 0.03) 0px, 
+        rgba(0, 255, 196, 0.03) 1px, 
+        transparent 1px, 
+        transparent 2px),
+      repeating-linear-gradient(90deg, 
+        rgba(0, 255, 196, 0.03) 0px, 
+        rgba(0, 255, 196, 0.03) 1px, 
+        transparent 1px, 
+        transparent 2px);
   }
 
   .color-blind-mode .text-neon-green {
@@ -89,7 +100,7 @@
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-neon-blue;
   }
 
   h2 {
@@ -101,7 +112,32 @@
   }
 
   .cyber-card {
-    @apply relative bg-cyber-card border border-cyber-border rounded-lg backdrop-blur-sm p-4 sm:p-6 transition-all duration-300 hover:border-neon-green hover:border-opacity-30 hover:shadow-[0_0_20px_rgba(0,255,157,0.2)];
+    @apply relative bg-cyber-card border border-cyber-border rounded-lg backdrop-blur-sm p-4 sm:p-6 transition-all duration-300 hover:border-neon-green hover:border-opacity-30 hover:shadow-[0_0_20px_rgba(0,255,196,0.2)];
+    background: linear-gradient(145deg, rgba(15, 25, 35, 0.7), rgba(10, 14, 23, 0.7));
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cyber-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00FFC4, transparent);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  .cyber-card:hover::before {
+    opacity: 1;
+  }
+
+  .cyber-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 255, 196, 0.1);
+    border-color: rgba(0, 255, 196, 0.2);
   }
 
   .status-dot {
@@ -126,5 +162,37 @@
 
   .text-responsive {
     @apply text-base sm:text-lg lg:text-xl;
+  }
+
+  .badge {
+    @apply inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6 text-neon-green;
+  }
+  
+  .service-title {
+    @apply flex items-center gap-2 text-sm;
+  }
+  
+  .access-tag {
+    @apply px-2 py-0.5 rounded-full text-xs border transition-colors duration-300 border-neon-purple/30 bg-neon-purple/10 text-neon-purple;
+  }
+  
+  .service-icon {
+    @apply p-3 rounded-lg bg-neon-green/10 border border-neon-green/30 transition-colors w-12 h-12 flex items-center justify-center mb-4;
+  }
+  
+  .service-name {
+    @apply text-xl font-bold mb-3;
+  }
+  
+  .service-desc {
+    @apply text-cyber-text-secondary text-sm mb-6;
+  }
+  
+  .feature {
+    @apply flex items-center gap-2 text-sm text-cyber-text-secondary;
+  }
+  
+  .feature-icon {
+    @apply text-neon-purple;
   }
 }

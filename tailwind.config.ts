@@ -20,43 +20,48 @@ export default {
     },
     extend: {
       colors: {
-        border: "rgb(var(--border) / <alpha-value>)", // Add this line
+        border: "rgb(var(--border) / <alpha-value>)", 
         neon: {
-          green: "#00FF9D",
-          purple: "#9D00FF",
-          blue: "#00F0FF"
+          green: "#00FFC4",
+          purple: "#C894FF",
+          blue: "#C1D9EE"
         },
         cyber: {
-          dark: "#0A0A0A",
-          card: "rgba(16, 16, 16, 0.6)",
-          border: "rgba(0, 255, 157, 0.2)"
+          dark: "#0A0E17",
+          darker: "#0F1923",
+          card: "rgba(15, 25, 35, 0.7)",
+          border: "rgba(0, 255, 196, 0.2)",
+          text: {
+            primary: "#E0F2FF",
+            secondary: "#8BA3B8"
+          }
         }
       },
       fontFamily: {
         mono: ["JetBrains Mono", "monospace"],
       },
       animation: {
-        "matrix-rain": "matrix 20s linear infinite",
+        "matrix-rain": "rain 20s linear infinite",
         "glow": "glow 2s ease-in-out infinite alternate",
         "fade-up": "fadeUp 0.5s ease-out forwards",
         "pulse-glow": "pulseGlow 2s ease-in-out infinite",
       },
       keyframes: {
-        matrix: {
-          "0%": { transform: "translateY(-100%)" },
-          "100%": { transform: "translateY(100%)" },
+        rain: {
+          "0%": { transform: "translateY(-100px)" },
+          "100%": { transform: "translateY(calc(100vh + 200px))" },
         },
         glow: {
-          "0%": { textShadow: "0 0 5px rgba(0, 255, 157, 0.5)" },
-          "100%": { textShadow: "0 0 20px rgba(0, 255, 157, 0.8), 0 0 30px rgba(0, 255, 157, 0.6)" },
+          "0%": { textShadow: "0 0 5px rgba(0, 255, 196, 0.5)" },
+          "100%": { textShadow: "0 0 20px rgba(0, 255, 196, 0.8), 0 0 30px rgba(0, 255, 196, 0.6)" },
         },
         fadeUp: {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         pulseGlow: {
-          "0%, 100%": { boxShadow: "0 0 5px rgba(0, 255, 157, 0.5)" },
-          "50%": { boxShadow: "0 0 20px rgba(0, 255, 157, 0.8), 0 0 30px rgba(0, 255, 157, 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 5px rgba(0, 255, 196, 0.5)" },
+          "50%": { boxShadow: "0 0 20px rgba(0, 255, 196, 0.8), 0 0 30px rgba(0, 255, 196, 0.6)" },
         },
       },
     },
