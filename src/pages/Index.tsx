@@ -19,7 +19,7 @@ const Index = () => {
             <div className="inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6">
               NÄSTA_GENERATIONS_INNOVATION
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 animate-glow">
+            <h1 className="text-6xl md:text-7xl font-bold mb-6">
               NEO<span className="text-neon-purple">CODE</span>
             </h1>
             <div className="max-w-2xl mb-8">
