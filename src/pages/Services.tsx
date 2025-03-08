@@ -126,7 +126,7 @@ const Services = () => {
         <div className="inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6 color-blind-mode:bg-[rgb(254,198,161)]/10 color-blind-mode:border-[rgb(254,198,161)]/30">
           DIGITAL INNOVATION
         </div>
-        <h1 className="text-5xl font-bold mb-6">TJÄNSTER</h1>
+        <h1 className="text-5xl font-bold mb-6 text-slate-50">TJÄNSTER</h1>
         <p className="mb-12 max-w-2xl text-gray-300">
           Vi är experter på att skapa digitala lösningar som hjälper företag att växa online. 
           Med vårt unika "betala när du är nöjd"-koncept garanterar vi högsta kvalitet och kundnöjdhet.
