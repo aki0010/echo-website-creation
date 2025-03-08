@@ -37,10 +37,11 @@ const MatrixRain = () => {
       }
     };
 
-    // New CSS-based rain effect
+    // CSS-based rain effect
     const rainContainer = rainColumnsRef.current;
     if (rainContainer) {
       const containerWidth = window.innerWidth;
+      rainContainer.innerHTML = '';
       
       // Create 50 rain columns at random positions
       for (let i = 0; i < 50; i++) {
@@ -82,6 +83,15 @@ const MatrixRain = () => {
           background: linear-gradient(to bottom, transparent, #00FFC4, transparent);
           animation: rain linear infinite;
           opacity: 0.5;
+        }
+        
+        @keyframes rain {
+          0% {
+            transform: translateY(-100px);
+          }
+          100% {
+            transform: translateY(calc(100vh + 200px));
+          }
         }
         `}
       </style>

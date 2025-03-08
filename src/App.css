@@ -43,3 +43,45 @@
 .read-the-docs {
   color: #8BA3B8;
 }
+
+.neo {
+  color: #00FFC4;
+}
+
+.code {
+  color: #C894FF;
+}
+
+/* Service card styles */
+.service-card {
+  background: linear-gradient(145deg, rgba(15, 25, 35, 0.7), rgba(10, 14, 23, 0.7));
+  border-radius: 8px;
+  padding: 30px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(0, 255, 196, 0.1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00FFC4, transparent);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 255, 196, 0.1);
+  border-color: rgba(0, 255, 196, 0.2);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
