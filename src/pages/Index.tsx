@@ -6,7 +6,7 @@ const Index = () => {
   return <div id="home" className="section-padding">
       <div className="container">
         {/* Hero Section */}
-        <div className="hero text-left py-[60px]">
+        <div className="hero text-left py-[86px]">
           <div className="badge">
             NÄSTA_GENERATIONS_INNOVATION
           </div>
