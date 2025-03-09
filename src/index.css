@@ -100,7 +100,7 @@
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-c1d9ee;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-neon-blue;
     letter-spacing: 2px;
     text-shadow: 0 0 20px rgba(193, 217, 238, 0.3);
   }
@@ -189,7 +189,7 @@
   }
   
   .service-name {
-    @apply text-xl font-bold mb-3 text-e0f2ff;
+    @apply text-xl font-bold mb-3 text-cyber-text-primary;
   }
   
   .service-desc {
