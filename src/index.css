@@ -130,11 +130,11 @@
   
   /* Hero section */
   .hero {
-    @apply mb-16 text-center;
+    @apply mb-16;
   }
   
   .description {
-    @apply text-gray-300 max-w-2xl mx-auto;
+    @apply text-gray-300 max-w-2xl;
   }
 
   /* Service cards grid */

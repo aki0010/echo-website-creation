@@ -9,14 +9,14 @@ const Index = () => {
     <div id="home" className="section-padding">
       <div className="container">
         {/* Hero Section */}
-        <div className="hero">
+        <div className="hero text-left">
           <div className="badge">
             NÄSTA_GENERATIONS_INNOVATION
           </div>
           <h1>
             NEO<span className="code">CODE</span>
           </h1>
-          <div className="description">
+          <div className="description mx-0">
             <h2 className="text-2xl mb-4">
               Moderna webbplatser.<br />
               Företagslösningar.
