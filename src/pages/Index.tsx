@@ -1,15 +1,12 @@
-
 import StatsCard from '@/components/StatsCard';
 import TechBadge from '@/components/TechBadge';
 import { ArrowRight } from 'lucide-react';
 import { Link as ScrollLink } from 'react-scroll';
-
 const Index = () => {
-  return (
-    <div id="home" className="section-padding">
+  return <div id="home" className="section-padding">
       <div className="container">
         {/* Hero Section */}
-        <div className="hero text-left">
+        <div className="hero text-left py-[60px]">
           <div className="badge">
             NÄSTA_GENERATIONS_INNOVATION
           </div>
@@ -44,15 +41,13 @@ const Index = () => {
         </div>
 
         {/* Stats Grid - updated to display in a single row */}
-        <div className="stats-grid mt-24 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div className="stats-grid mt-24 grid grid-cols-2 md:grid-cols-4 gap-3 py-[45px]">
           <StatsCard type="websites" value="5+" label="WEBBPLATSER_LANSERADE" />
           <StatsCard type="satisfaction" value="100%" label="KUNDNÖJDHET" />
           <StatsCard type="innovation" value="ELIT" label="UTVECKLING" />
           <StatsCard type="uptime" value="99.9%" label="TILLFÖRLITLIGHET" />
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;

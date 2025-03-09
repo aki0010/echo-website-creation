@@ -4,7 +4,7 @@ interface TechBadgeProps {
 const TechBadge = ({
   name
 }: TechBadgeProps) => {
-  return <div className="bg-neon-green/10 border border-neon-green/30 text-sm uppercase text-neon-green py-[3px] rounded-md px-[14px]">
+  return <div className="bg-neon-green/10 border border-neon-green/30 text-sm uppercase text-neon-green rounded-md px-[14px] py-px">
       {name}
     </div>;
 };
