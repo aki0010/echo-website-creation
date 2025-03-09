@@ -118,7 +118,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="cyber-card w-full bg-neon-green/5 p-6 border border-neon-green/30 rounded-lg shadow-[0_0_15px_rgba(57,255,20,0.15)] backdrop-blur-sm relative overflow-hidden">
+          <div className="cyber-card w-full p-6 border border-neon-green/30 rounded-lg shadow-[0_0_15px_rgba(57,255,20,0.15)] backdrop-blur-sm relative overflow-hidden bg-cyber-dark">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-green/40 to-transparent"></div>
             <div className="absolute top-0 right-0 p-2 text-xs text-neon-green/70">FORM_v1.2</div>
             <h3 className="text-xl font-semibold mb-4 text-neon-green">SKICKA_FÖRFRÅGAN</h3>
