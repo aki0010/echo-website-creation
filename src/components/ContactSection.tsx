@@ -78,7 +78,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           <div className="max-w-full text-left">
             <h1 className="font-bold py-0 text-5xl">
-              Projekt<span className="code">FÖRFRÅGAN</span>
+              Projekt<span className="code"> FÖRFRÅGAN</span>
             </h1>
             <div className="description mx-0">
               <h2 className="text-2xl mb-4">
