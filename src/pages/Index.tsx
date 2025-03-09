@@ -43,8 +43,8 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Stats Grid */}
-        <div className="services mt-24">
+        {/* Stats Grid - updated to display in a single row */}
+        <div className="stats-grid mt-24 grid grid-cols-2 md:grid-cols-4 gap-3">
           <StatsCard type="websites" value="5+" label="WEBBPLATSER_LANSERADE" />
           <StatsCard type="satisfaction" value="100%" label="KUNDNÖJDHET" />
           <StatsCard type="innovation" value="ELIT" label="UTVECKLING" />
