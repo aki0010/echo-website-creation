@@ -1,18 +1,10 @@
-
 import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { useToast } from "@/hooks/use-toast";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -23,50 +15,41 @@ const ContactSection = () => {
     description: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   useEffect(() => {
     emailjs.init("RXtO2yaS1DANkbyq7");
   }, []);
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
   const handleSubmit = async () => {
     if (!formData.name || !formData.email || !formData.description) {
       toast({
         title: "Validering misslyckades",
         description: "Vänligen fyll i alla obligatoriska fält.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
-
     setIsSubmitting(true);
-
     try {
-      await emailjs.send(
-        'service_fnrpg2n',
-        'template_lcsxkbq',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          project_type: formData.projectType,
-          budget: formData.budget,
-          timeline: formData.timeline,
-          message: formData.description,
-        }
-      );
-
+      await emailjs.send('service_fnrpg2n', 'template_lcsxkbq', {
+        from_name: formData.name,
+        from_email: formData.email,
+        project_type: formData.projectType,
+        budget: formData.budget,
+        timeline: formData.timeline,
+        message: formData.description
+      });
       toast({
         title: "Förfrågan skickad!",
-        description: "Vi återkommer till dig så snart som möjligt.",
+        description: "Vi återkommer till dig så snart som möjligt."
       });
-
       setFormData({
         name: '',
         email: '',
@@ -75,21 +58,18 @@ const ContactSection = () => {
         timeline: '',
         description: ''
       });
-
     } catch (error) {
       toast({
         title: "Ett fel uppstod",
         description: "Det gick inte att skicka förfrågan. Försök igen senare.",
-        variant: "destructive",
+        variant: "destructive"
       });
       console.error('EmailJS error:', error);
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <section id="contact" className="section-padding py-[60px] overflow-hidden">
+  return <section id="contact" className="section-padding py-[60px] overflow-hidden">
       <div className="container">
         <div className="inline-block px-3 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6 text-sm">
           KONTAKTA OSS
@@ -97,7 +77,7 @@ const ContactSection = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           <div className="max-w-full text-left">
-            <h1 className="mb-4">
+            <h1 className="text-base font-bold">
               Projekt<span className="code">FÖRFRÅGAN</span>
             </h1>
             <div className="description mx-0">
@@ -147,40 +127,18 @@ const ContactSection = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="min-w-0">
                   <Label htmlFor="name" className="text-sm">Namn *</Label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm"
-                    required
-                  />
+                  <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm" required />
                 </div>
                 <div className="min-w-0">
                   <Label htmlFor="email" className="text-sm">Email *</Label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm"
-                    required
-                  />
+                  <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm" required />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="min-w-0">
                   <Label htmlFor="projectType" className="text-sm">Projekttyp</Label>
-                  <select
-                    id="projectType"
-                    name="projectType"
-                    value={formData.projectType}
-                    onChange={handleInputChange}
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm"
-                  >
+                  <select id="projectType" name="projectType" value={formData.projectType} onChange={handleInputChange} className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm">
                     <option value="">Välj typ</option>
                     <option value="website">Webbplats</option>
                     <option value="webapp">Webbapplikation</option>
@@ -190,13 +148,7 @@ const ContactSection = () => {
                 </div>
                 <div className="min-w-0">
                   <Label htmlFor="budget" className="text-sm">Budget</Label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleInputChange}
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm"
-                  >
+                  <select id="budget" name="budget" value={formData.budget} onChange={handleInputChange} className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm">
                     <option value="">Välj budget</option>
                     <option value="small">10k - 25k SEK</option>
                     <option value="medium">25k - 50k SEK</option>
@@ -207,13 +159,7 @@ const ContactSection = () => {
 
               <div className="min-w-0">
                 <Label htmlFor="timeline" className="text-sm">Önskad tidslinje</Label>
-                <select
-                  id="timeline"
-                  name="timeline"
-                  value={formData.timeline}
-                  onChange={handleInputChange}
-                  className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm"
-                >
+                <select id="timeline" name="timeline" value={formData.timeline} onChange={handleInputChange} className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green text-sm">
                   <option value="">Välj tidslinje</option>
                   <option value="asap">Så snart som möjligt</option>
                   <option value="1month">Inom 1 månad</option>
@@ -224,37 +170,19 @@ const ContactSection = () => {
 
               <div className="min-w-0">
                 <Label htmlFor="description" className="text-sm">Projektbeskrivning *</Label>
-                <Textarea
-                  id="description"
-                  name="description"
-                  value={formData.description}
-                  onChange={handleInputChange}
-                  className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green min-h-[120px] text-sm"
-                  placeholder="Berätta om ditt projekt..."
-                  required
-                />
+                <Textarea id="description" name="description" value={formData.description} onChange={handleInputChange} className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-neon-green min-h-[120px] text-sm" placeholder="Berätta om ditt projekt..." required />
               </div>
 
-              <button
-                onClick={handleSubmit}
-                disabled={isSubmitting}
-                className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm"
-              >
-                {isSubmitting ? (
-                  "Skickar..."
-                ) : (
-                  <>
+              <button onClick={handleSubmit} disabled={isSubmitting} className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm">
+                {isSubmitting ? "Skickar..." : <>
                     <Send className="w-4 h-4" />
                     Skicka förfrågan
-                  </>
-                )}
+                  </>}
               </button>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;
