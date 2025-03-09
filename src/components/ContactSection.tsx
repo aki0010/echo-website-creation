@@ -92,7 +92,7 @@ const ContactSection = () => {
             </div>
             
             <div className="space-y-4 sm:space-y-6 mt-8">
-              <div className="flex items-center gap-3 p-3 sm:p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
+              <div className="flex items-center gap-3 p-3 sm:p-4 rounded-lg border border-neon-green/20 bg-cyber-dark">
                 <Mail className="w-5 h-5 text-neon-green flex-shrink-0" />
                 <div className="min-w-0">
                   <h3 className="font-medium text-sm sm:text-base truncate">Email</h3>
@@ -100,7 +100,7 @@ const ContactSection = () => {
                 </div>
               </div>
               
-              <div className="flex items-center gap-3 p-3 sm:p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
+              <div className="flex items-center gap-3 p-3 sm:p-4 rounded-lg border border-neon-green/20 bg-cyber-dark">
                 <Clock className="w-5 h-5 text-neon-green flex-shrink-0" />
                 <div className="min-w-0">
                   <h3 className="font-medium text-sm sm:text-base truncate">Svarstid</h3>
@@ -108,7 +108,7 @@ const ContactSection = () => {
                 </div>
               </div>
               
-              <div className="flex items-center gap-3 p-3 sm:p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
+              <div className="flex items-center gap-3 p-3 sm:p-4 rounded-lg border border-neon-green/20 bg-cyber-dark">
                 <Calendar className="w-5 h-5 text-neon-green flex-shrink-0" />
                 <div className="min-w-0">
                   <h3 className="font-medium text-sm sm:text-base truncate">Tillgänglighet</h3>
