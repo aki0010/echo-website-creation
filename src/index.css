@@ -57,6 +57,7 @@
         transparent 2px);
   }
 
+  /* Color Blind Mode Styles */
   .color-blind-mode .text-neon-green {
     @apply text-[rgb(254,198,161)];
   }
@@ -99,7 +100,7 @@
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-neon-blue;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-c1d9ee;
     letter-spacing: 2px;
     text-shadow: 0 0 20px rgba(193, 217, 238, 0.3);
   }
@@ -112,14 +113,44 @@
     @apply text-xl sm:text-2xl;
   }
 
-  .cyber-card {
-    @apply relative bg-cyber-card border border-cyber-border rounded-lg backdrop-blur-sm p-4 sm:p-6 transition-all duration-300 hover:border-neon-green hover:border-opacity-30 hover:shadow-[0_0_20px_rgba(0,255,196,0.2)];
+  /* Layout and containers */
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Badge styles */
+  .badge {
+    @apply inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6 text-neon-green;
+    letter-spacing: 1px;
+  }
+  
+  /* Hero section */
+  .hero {
+    @apply mb-16 text-center;
+  }
+  
+  .description {
+    @apply text-gray-300 max-w-2xl mx-auto;
+  }
+
+  /* Service cards grid */
+  .services {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+  
+  /* Service card styling */
+  .service-card {
+    @apply bg-cyber-card border border-cyber-border rounded-lg p-6 transition-all duration-300 hover:border-neon-green hover:border-opacity-30 hover:shadow-[0_0_20px_rgba(0,255,196,0.2)];
     background: linear-gradient(145deg, rgba(15, 25, 35, 0.7), rgba(10, 14, 23, 0.7));
     position: relative;
     overflow: hidden;
   }
 
-  .cyber-card::before {
+  .service-card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -131,62 +162,22 @@
     transition: opacity 0.5s;
   }
 
-  .cyber-card:hover::before {
-    opacity: 1;
-  }
-
-  .cyber-card:hover {
+  .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px -5px rgba(0, 255, 196, 0.1);
     border-color: rgba(0, 255, 196, 0.2);
   }
 
-  .status-dot {
-    @apply w-2 h-2 rounded-full inline-block mr-2;
-  }
-
-  .status-dot.active {
-    @apply bg-neon-green animate-pulse-glow;
-    box-shadow: 0 0 8px rgba(0, 255, 196, 0.6);
-  }
-
-  .digital-rain {
-    @apply fixed inset-0 z-0 opacity-20 pointer-events-none;
+  .service-card:hover::before {
+    opacity: 1;
   }
   
-  .rain-column {
-    position: absolute;
-    top: -100px;
-    width: 1px;
-    height: 100px;
-    background: linear-gradient(to bottom, transparent, #00FFC4, transparent);
-    animation: rain linear infinite;
-    opacity: 0.5;
-  }
-  
-  .matrix-bg {
-    @apply fixed inset-0 z-0 opacity-20;
-  }
-
-  .section-padding {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
-  }
-
-  .responsive-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
-  }
-
-  .text-responsive {
-    @apply text-base sm:text-lg lg:text-xl;
-  }
-
-  .badge {
-    @apply inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6 text-neon-green;
-    letter-spacing: 1px;
+  .service-header {
+    @apply flex items-center justify-between mb-4;
   }
   
   .service-title {
-    @apply flex items-center gap-2 text-sm;
+    @apply flex items-center gap-2 text-sm text-neon-green;
   }
   
   .access-tag {
@@ -194,15 +185,19 @@
   }
   
   .service-icon {
-    @apply p-3 rounded-lg bg-neon-green/10 border border-neon-green/30 transition-colors w-12 h-12 flex items-center justify-center mb-4;
+    @apply p-3 rounded-lg bg-neon-green/10 border border-neon-green/30 transition-colors w-12 h-12 flex items-center justify-center mb-4 text-neon-green;
   }
   
   .service-name {
-    @apply text-xl font-bold mb-3;
+    @apply text-xl font-bold mb-3 text-e0f2ff;
   }
   
   .service-desc {
     @apply text-cyber-text-secondary text-sm mb-6;
+  }
+  
+  .features {
+    @apply space-y-3;
   }
   
   .feature {
@@ -213,6 +208,7 @@
     @apply text-neon-purple;
   }
 
+  /* Logo and branding */
   .logo-icon {
     @apply w-10 h-10 rounded border border-neon-green flex items-center justify-center font-bold text-neon-green;
     background: linear-gradient(135deg, #0f1923 0%, #1c2531 100%);
@@ -223,6 +219,15 @@
     @apply text-2xl font-bold;
   }
   
+  .neo {
+    @apply text-neon-green;
+  }
+  
+  .code {
+    @apply text-neon-purple;
+  }
+  
+  /* Animation keyframes */
   @keyframes rain {
     0% {
       transform: translateY(-100px);

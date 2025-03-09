@@ -1,6 +1,5 @@
 
 import { Palette, Globe, BarChart3, Users, Shield, Code2 } from 'lucide-react';
-import { cn } from "@/lib/utils";
 
 interface ServiceFeature {
   name: string;
@@ -38,49 +37,39 @@ const ServiceCard = ({
 
   return (
     <div 
-      className={cn(
-        "relative group cursor-pointer transition-all duration-300",
-        selected && "scale-[1.02]"
-      )}
+      className="service-card"
       onClick={onClick}
     >
-      <div className="cyber-card relative h-full flex flex-col bg-cyber-dark/95">
-        <div className="flex items-center justify-between mb-2">
-          <div className="service-title text-neon-green">
-            <span>{'>'}</span>
-            <span className="font-mono">{title}</span>
-          </div>
-          <div className="access-tag">
-            {status}
-          </div>
+      <div className="service-header">
+        <div className="service-title">
+          <span>{'>'}</span>
+          <span>{title}</span>
         </div>
-        
-        <div className={cn(
-          "service-icon",
-          selected ? "text-neon-purple" : "text-neon-green",
-        )}>
-          <Icon className="w-6 h-6" />
+        <div className="access-tag">
+          {status}
         </div>
-        
-        <h3 className="service-name text-neon-blue">{title}</h3>
-        
-        <p className="service-desc">
-          {description}
-        </p>
-        
-        <div className="mt-auto">
-          <div className="space-y-2">
-            {features.map((feature, index) => (
-              <div 
-                key={index} 
-                className="feature"
-              >
-                <span className="feature-icon">+</span>
-                {feature.name}
-              </div>
-            ))}
+      </div>
+      
+      <div className="service-icon">
+        <Icon className="w-6 h-6" />
+      </div>
+      
+      <h3 className="service-name">{title}</h3>
+      
+      <p className="service-desc">
+        {description}
+      </p>
+      
+      <div className="features">
+        {features.map((feature, index) => (
+          <div 
+            key={index} 
+            className="feature"
+          >
+            <span className="feature-icon">+</span>
+            {feature.name}
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

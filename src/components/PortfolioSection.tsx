@@ -1,3 +1,4 @@
+
 import { ArrowUpRight, Github, Globe, Shield, Zap, CreditCard, Server, Lock, Download, Upload, Smartphone } from 'lucide-react';
 
 interface Project {
@@ -89,23 +90,38 @@ const projects: Project[] = [
 
 const PortfolioSection = () => {
   return (
-    <section className="max-w-7xl mx-auto my-24" id="portfolio">
-      <div className="cyber-card p-8">
-        <div className="flex items-center gap-2 px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 w-fit mb-6">
-          <span className="text-sm">PROJEKT_GALLERI</span>
+    <section className="section-padding" id="portfolio">
+      <div className="container">
+        <div className="badge mb-6">
+          PROJEKT_GALLERI
         </div>
         
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 break-words">
-          LANSERADE_<span className="text-neon-purple">PROJEKT</span>
-        </h2>
+        <h1 className="mb-6">
+          LANSERADE_<span className="code">PROJEKT</span>
+        </h1>
+        
+        <p className="description mb-12">
+          Utforska våra senaste digitala projekt där vi har hjälpt företag att uppnå sina mål
+          genom innovativa och skräddarsydda lösningar.
+        </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="services">
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="bg-cyber-dark/50 border border-neon-green/20 rounded-lg overflow-hidden hover:border-neon-green/40 transition-all duration-300"
+              className="service-card"
             >
-              <div className="aspect-video bg-cyber-dark/80 overflow-hidden flex items-center justify-center">
+              <div className="service-header">
+                <div className="service-title">
+                  <span>{'>'}</span>
+                  <span>{project.title}</span>
+                </div>
+                <div className="access-tag">
+                  PROJEKT
+                </div>
+              </div>
+              
+              <div className="aspect-video bg-cyber-dark/80 overflow-hidden flex items-center justify-center mb-4 rounded border border-neon-green/20">
                 <img 
                   src={project.imageUrl} 
                   alt={project.title}
@@ -113,61 +129,56 @@ const PortfolioSection = () => {
                 />
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-neon-green/70 text-sm mb-4">
-                  {project.description}
-                </p>
-                
-                {project.features && (
-                  <div className="space-y-3 mb-4 border-t border-neon-green/20 pt-4">
-                    {project.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-start gap-2">
-                        <div className="mt-1">{feature.icon}</div>
-                        <div>
-                          <h4 className="text-sm font-semibold">{feature.title}</h4>
-                          <p className="text-xs text-neon-green/60">{feature.description}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span 
-                      key={tagIndex}
-                      className="text-xs px-2 py-1 bg-neon-green/10 rounded-full border border-neon-green/30"
-                    >
-                      {tag}
-                    </span>
+              <h3 className="service-name">{project.title}</h3>
+              <p className="service-desc">
+                {project.description}
+              </p>
+              
+              {project.features && (
+                <div className="features">
+                  {project.features.slice(0, 3).map((feature, featureIndex) => (
+                    <div key={featureIndex} className="feature">
+                      <span className="feature-icon">+</span>
+                      {feature.title}
+                    </div>
                   ))}
                 </div>
-                
-                <div className="flex gap-3">
-                  {project.liveUrl && (
-                    <a 
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm text-neon-green hover:text-neon-green/80 transition-colors"
-                    >
-                      <Globe className="w-4 h-4" />
-                      Live Demo
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a 
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm text-neon-green hover:text-neon-green/80 transition-colors"
-                    >
-                      <Github className="w-4 h-4" />
-                      Kod
-                    </a>
-                  )}
-                </div>
+              )}
+              
+              <div className="flex flex-wrap gap-2 my-4">
+                {project.tags.map((tag, tagIndex) => (
+                  <span 
+                    key={tagIndex}
+                    className="text-xs px-2 py-1 bg-neon-green/10 rounded-full border border-neon-green/30"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              
+              <div className="flex gap-3 mt-4">
+                {project.liveUrl && (
+                  <a 
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-sm text-neon-green hover:text-neon-green/80 transition-colors"
+                  >
+                    <Globe className="w-4 h-4" />
+                    Live Demo
+                  </a>
+                )}
+                {project.githubUrl && (
+                  <a 
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-sm text-neon-green hover:text-neon-green/80 transition-colors"
+                  >
+                    <Github className="w-4 h-4" />
+                    Kod
+                  </a>
+                )}
               </div>
             </div>
           ))}

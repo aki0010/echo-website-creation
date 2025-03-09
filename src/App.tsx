@@ -27,29 +27,29 @@ const App = () => (
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navigation />
           <main className="flex-grow">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
-              <section id="home">
-                <Index />
-              </section>
-              
-              <section id="services">
-                <Services />
-              </section>
+            <section id="home">
+              <Index />
+            </section>
+            
+            <section id="services">
+              <Services />
+            </section>
 
-              <section id="process">
-                <Process />
-              </section>
+            <section id="process">
+              <Process />
+            </section>
 
+            <section id="portfolio">
               <PortfolioSection />
-              
-              <Terminal />
+            </section>
+            
+            <Terminal />
 
-              <ContactSection />
-            </div>
+            <ContactSection />
           </main>
 
           <footer className="relative z-20 py-8 mt-24 border-t border-neon-green/20 bg-cyber-dark/95">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="container">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div>
                   <h3 className="font-bold mb-4">DEGENDESIGNS</h3>
