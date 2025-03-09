@@ -78,7 +78,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           <div className="max-w-full text-left">
             <h1 className="font-bold py-0 text-5xl">
-              Projekt<span className="code"> FÖRFRÅGAN</span>
+              Projekt<span className="code">FÖRFRÅGAN</span>
             </h1>
             <div className="description mx-0">
               <h2 className="text-2xl mb-4">
@@ -121,7 +121,7 @@ const ContactSection = () => {
           <div className="cyber-card w-full p-6 border border-neon-green/30 rounded-lg shadow-[0_0_15px_rgba(57,255,20,0.15)] backdrop-blur-sm relative overflow-hidden bg-cyber-dark">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-green/40 to-transparent"></div>
             <div className="absolute top-0 right-0 p-2 text-xs text-neon-green/70">FORM_v1.2</div>
-            <h3 className="text-xl font-semibold mb-4 text-neon-green">SKICKA_FÖRFRÅGAN</h3>
+            <h3 className="text-xl font-semibold mb-4 text-gray-300">SKICKA_FÖRFRÅGAN</h3>
             
             <div className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
