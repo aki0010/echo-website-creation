@@ -12,11 +12,8 @@ import PortfolioSection from "./components/PortfolioSection";
 import Terminal from "./components/Terminal";
 import ContactSection from "./components/ContactSection";
 import { Twitter, Github, Linkedin, Mail, Globe, ArrowRight } from 'lucide-react';
-
 const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
+const App = () => <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -52,7 +49,7 @@ const App = () => (
             <div className="container">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div>
-                  <h3 className="font-bold mb-4">DEGENDESIGNS</h3>
+                  <h3 className="font-bold mb-4 text-neon-purple">DEGENDESIGNS</h3>
                   <p className="text-sm text-neon-green/60">NeoCode Development Agency specializing in high-performance dApps, DeFi interfaces, and crypto platforms.</p>
                   <div className="space-y-2 mt-4">
                     <a href="mailto:support@neocode.se" className="block text-neon-green/60 hover:text-neon-green transition-colors">
@@ -77,7 +74,7 @@ const App = () => (
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold mb-4">QUICK_LINKS</h3>
+                  <h3 className="font-bold mb-4 text-neon-purple">QUICK_LINKS</h3>
                   <div className="space-y-2 text-sm">
                     <ScrollLink to="services" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
                       <span className="flex items-center">
@@ -110,7 +107,7 @@ const App = () => (
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold mb-4">SERVICES</h3>
+                  <h3 className="font-bold mb-4 text-neon-purple">SERVICES</h3>
                   <div className="space-y-2 text-sm">
                     <ScrollLink to="services" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
                       <span className="flex items-center">
@@ -157,7 +154,7 @@ const App = () => (
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-bold mb-4">SYSTEM_STATUS</h3>
+                  <h3 className="font-bold mb-4 text-neon-purple">SYSTEM_STATUS</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between items-center group cursor-pointer">
                       <span className="text-neon-green/60">MAINNET</span>
@@ -183,7 +180,5 @@ const App = () => (
         </div>
       </div>
     </TooltipProvider>
-  </QueryClientProvider>
-);
-
+  </QueryClientProvider>;
 export default App;
