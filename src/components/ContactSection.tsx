@@ -89,21 +89,29 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+    <section id="contact" className="section-padding py-[60px] overflow-hidden">
+      <div className="container">
         <div className="inline-block px-3 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6 text-sm">
           KONTAKTA OSS
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           <div className="max-w-full text-left">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 break-words">Låt oss diskutera ditt projekt</h2>
-            <p className="text-neon-green/80 mb-6 sm:mb-8 text-sm sm:text-base break-words">
-              Vi hjälper dig att ta din idé från koncept till verklighet. 
-              Fyll i formuläret så återkommer vi inom 24 timmar.
-            </p>
+            <h1 className="mb-4">
+              Projekt<span className="code">FÖRFRÅGAN</span>
+            </h1>
+            <div className="description mx-0">
+              <h2 className="text-2xl mb-4">
+                Låt oss diskutera ditt projekt.<br />
+                Från idé till verklighet.
+              </h2>
+              <p>
+                Vi hjälper dig att ta din idé från koncept till verklighet. 
+                Fyll i formuläret så återkommer vi inom 24 timmar.
+              </p>
+            </div>
             
-            <div className="space-y-4 sm:space-y-6">
+            <div className="space-y-4 sm:space-y-6 mt-8">
               <div className="flex items-center gap-3 p-3 sm:p-4 bg-neon-green/5 rounded-lg border border-neon-green/20">
                 <Mail className="w-5 h-5 text-neon-green flex-shrink-0" />
                 <div className="min-w-0">
@@ -134,6 +142,7 @@ const ContactSection = () => {
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-green/40 to-transparent"></div>
             <div className="absolute top-0 right-0 p-2 text-xs text-neon-green/70">FORM_v1.2</div>
             <h3 className="text-xl font-semibold mb-4 text-neon-green">SKICKA_FÖRFRÅGAN</h3>
+            
             <div className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="min-w-0">
