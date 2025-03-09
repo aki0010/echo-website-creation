@@ -96,7 +96,7 @@ const ContactSection = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          <div className="max-w-full">
+          <div className="max-w-full text-left">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 break-words">Låt oss diskutera ditt projekt</h2>
             <p className="text-neon-green/80 mb-6 sm:mb-8 text-sm sm:text-base break-words">
               Vi hjälper dig att ta din idé från koncept till verklighet. 
