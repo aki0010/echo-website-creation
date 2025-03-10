@@ -1,3 +1,4 @@
+
 import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
@@ -82,7 +83,7 @@ const ContactSection = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           <div className="max-w-full text-left">
-            <h1 className="font-bold py-0 text-3xl sm:text-4xl md:text-5xl">
+            <h1 className="font-bold py-0 text-2xl xs:text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight">
               Projekt<span className="code">FÖRFRÅGAN</span>
             </h1>
             <div className="description mx-0">
