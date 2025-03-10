@@ -100,12 +100,12 @@ const PortfolioSection = () => {
           LANSERADE_<span className="code">PROJEKT</span>
         </h1>
         
-        <p className="description mb-12">
+        <p className="description mb-12 mx-0 text-left">
           Utforska våra senaste digitala projekt där vi har hjälpt företag att uppnå sina mål
           genom innovativa och skräddarsydda lösningar.
         </p>
 
-        <div className="services">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div 
               key={index}
@@ -114,7 +114,7 @@ const PortfolioSection = () => {
               <div className="service-header">
                 <div className="service-title">
                   <span>{'>'}</span>
-                  <span>{project.title}</span>
+                  <span className="truncate">{project.title}</span>
                 </div>
                 <div className="access-tag">
                   PROJEKT
@@ -135,10 +135,10 @@ const PortfolioSection = () => {
               </p>
               
               {project.features && (
-                <div className="features">
+                <div className="space-y-3 my-4">
                   {project.features.slice(0, 3).map((feature, featureIndex) => (
-                    <div key={featureIndex} className="feature">
-                      <span className="feature-icon">+</span>
+                    <div key={featureIndex} className="flex items-center gap-2 text-sm text-cyber-text-secondary">
+                      <span className="text-neon-purple">+</span>
                       {feature.title}
                     </div>
                   ))}
