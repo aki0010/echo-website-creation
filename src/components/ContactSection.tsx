@@ -1,4 +1,3 @@
-
 import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
@@ -6,7 +5,6 @@ import { useToast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -20,18 +18,15 @@ const ContactSection = () => {
   const {
     toast
   } = useToast();
-
   useEffect(() => {
     emailjs.init("RXtO2yaS1DANkbyq7");
   }, []);
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
   const handleSubmit = async () => {
     if (!formData.name || !formData.email || !formData.description) {
       toast({
@@ -74,7 +69,6 @@ const ContactSection = () => {
       setIsSubmitting(false);
     }
   };
-
   return <section id="contact" className="section-padding py-12 sm:py-16 md:py-[60px] overflow-hidden">
       <div className="container">
         <div className="inline-block px-2 sm:px-3 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-4 sm:mb-6 text-xs sm:text-sm">
@@ -84,7 +78,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           <div className="max-w-full text-left">
             <h1 className="font-bold py-0 text-2xl xs:text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight">
-              Projekt<span className="code">FÖRFRÅGAN</span>
+              Projekt<span className="code"> FÖRFRÅGAN</span>
             </h1>
             <div className="description mx-0">
               <h2 className="text-xl sm:text-2xl mb-2 sm:mb-4">
@@ -102,7 +96,7 @@ const ContactSection = () => {
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-neon-green flex-shrink-0" />
                 <div className="min-w-0">
                   <h3 className="font-medium text-xs sm:text-sm md:text-base truncate">Email</h3>
-                  <p className="text-xs sm:text-sm text-neon-green/60 truncate">support@neocode.se</p>
+                  <p className="text-xs sm:text-sm truncate text-neon-blue">support@neocode.se</p>
                 </div>
               </div>
               
@@ -110,7 +104,7 @@ const ContactSection = () => {
                 <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-neon-green flex-shrink-0" />
                 <div className="min-w-0">
                   <h3 className="font-medium text-xs sm:text-sm md:text-base truncate">Svarstid</h3>
-                  <p className="text-xs sm:text-sm text-neon-green/60 truncate">Inom 24 timmar</p>
+                  <p className="text-xs sm:text-sm truncate text-neon-blue">Inom 24 timmar</p>
                 </div>
               </div>
               
@@ -118,7 +112,7 @@ const ContactSection = () => {
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-neon-green flex-shrink-0" />
                 <div className="min-w-0">
                   <h3 className="font-medium text-xs sm:text-sm md:text-base truncate">Tillgänglighet</h3>
-                  <p className="text-xs sm:text-sm text-neon-green/60 truncate">Mån-Fre, 09:00-17:00</p>
+                  <p className="text-xs sm:text-sm truncate text-neon-blue">Mån-Fre, 09:00-17:00</p>
                 </div>
               </div>
             </div>
@@ -191,5 +185,4 @@ const ContactSection = () => {
       </div>
     </section>;
 };
-
 export default ContactSection;

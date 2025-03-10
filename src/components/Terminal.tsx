@@ -62,37 +62,10 @@ const Terminal = () => {
   };
   return <div className="cyber-card">
       <div className="flex items-center gap-2 p-2 border-b border-neon-green/20 px-[151px]">
-        <span className="text-neon-green">SYSTEM_TERMINAL</span>
-        <div className="px-2 py-0.5 bg-neon-green/10 rounded text-xs border border-neon-green/30">
-          <span>LIVE</span>
-        </div>
-      </div>
-      <div className="p-4 font-mono text-sm px-[152px] my-0">
-        <div className="mb-4">
-          <p>=== TILLGÄNGLIGA KOMMANDON ===</p>
-          <p className="text-neon-green">help - Visa tillgängliga kommandon</p>
-          <p className="text-neon-green">clear - Rensa terminalutdata</p>
-          <p className="text-neon-green">stats - Visa prestandamätriker</p>
-          <p className="text-neon-green">websites - Visa lanserade webbplatser</p>
-          <p className="text-neon-green">contact - Kontaktinformation</p>
-          <p className="text-neon-green">ratings - Visa kundbetyg</p>
-        </div>
         
-        {commandHistory.map((entry, index) => <div key={index} className="mb-4">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-neon-green/60">{'>'}</span>
-              <span className="text-neon-green">{entry.command}</span>
-            </div>
-            <div className={`pl-4 ${entry.response.type === 'error' ? 'text-red-400' : entry.response.type === 'success' ? 'text-neon-green' : 'text-neon-green/80'}`}>
-              {entry.response.text.map((line, i) => <p key={i}>{line}</p>)}
-            </div>
-          </div>)}
         
-        <div className="flex items-center gap-2">
-          <span className="text-neon-green/60">{'>'}</span>
-          <input type="text" value={currentCommand} onChange={e => setCurrentCommand(e.target.value)} onKeyDown={handleCommand} className="bg-transparent border-none outline-none text-neon-green w-full" placeholder="Skriv ett kommando..." spellCheck="false" />
-        </div>
       </div>
+      
     </div>;
 };
 export default Terminal;
