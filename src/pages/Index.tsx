@@ -40,8 +40,8 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Stats Grid - updated to display in a single row */}
-        <div className="stats-grid mt-24 grid grid-cols-2 md:grid-cols-4 gap-3 py-[45px]">
+        {/* Stats Grid - make it responsive for all screen sizes */}
+        <div className="stats-grid mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 py-[45px]">
           <StatsCard type="websites" value="5+" label="WEBBPLATSER_LANSERADE" />
           <StatsCard type="satisfaction" value="100%" label="KUNDNÖJDHET" />
           <StatsCard type="innovation" value="ELIT" label="UTVECKLING" />
