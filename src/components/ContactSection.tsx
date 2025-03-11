@@ -26,10 +26,24 @@ const ContactSection = () => {
   }, []);
   
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    
+    // Map form field names to formData properties
+    const fieldMapping: Record<string, string> = {
+      'from_name': 'name',
+      'from_email': 'email',
+      'project_type': 'projectType',
+      'budget': 'budget',
+      'timeline': 'timeline',
+      'message': 'description'
+    };
+    
+    const formDataKey = fieldMapping[name] || name;
+    
+    setFormData(prev => ({
+      ...prev,
+      [formDataKey]: value
+    }));
   };
   
   const handleSubmit = async (e: React.FormEvent) => {
@@ -164,7 +178,7 @@ const ContactSection = () => {
                     type="text" 
                     id="name" 
                     name="from_name" 
-                    value={formData.name} 
+                    value={formData.name}
                     onChange={handleInputChange} 
                     className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm" 
                     required 
@@ -176,7 +190,7 @@ const ContactSection = () => {
                     type="email" 
                     id="email" 
                     name="from_email" 
-                    value={formData.email} 
+                    value={formData.email}
                     onChange={handleInputChange} 
                     className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm" 
                     required 
@@ -190,7 +204,7 @@ const ContactSection = () => {
                   <select 
                     id="projectType" 
                     name="project_type" 
-                    value={formData.projectType} 
+                    value={formData.projectType}
                     onChange={handleInputChange} 
                     className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm"
                   >
@@ -206,7 +220,7 @@ const ContactSection = () => {
                   <select 
                     id="budget" 
                     name="budget" 
-                    value={formData.budget} 
+                    value={formData.budget}
                     onChange={handleInputChange} 
                     className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm"
                   >
@@ -223,7 +237,7 @@ const ContactSection = () => {
                 <select 
                   id="timeline" 
                   name="timeline" 
-                  value={formData.timeline} 
+                  value={formData.timeline}
                   onChange={handleInputChange} 
                   className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm"
                 >
@@ -240,7 +254,7 @@ const ContactSection = () => {
                 <Textarea 
                   id="description" 
                   name="message" 
-                  value={formData.description} 
+                  value={formData.description}
                   onChange={handleInputChange} 
                   className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green min-h-[80px] sm:min-h-[120px] text-xs sm:text-sm" 
                   placeholder="Berätta om ditt projekt..." 
