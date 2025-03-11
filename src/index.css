@@ -122,6 +122,51 @@
     @apply py-20 px-4 sm:px-6 lg:px-8;
   }
 
+  /* Matrix Digital Rain Effect */
+  .digital-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .rain-column {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    animation: rain linear infinite;
+    color: #00FFC4;
+    text-shadow: 0 0 5px rgba(0, 255, 196, 0.5);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .matrix-char {
+    margin: 1px 0;
+    animation: flicker 5s linear infinite;
+  }
+
+  @keyframes rain {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+    25%, 75% { opacity: 0.5; }
+  }
+
   /* Badge styles */
   .badge {
     @apply inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6 text-neon-green;
