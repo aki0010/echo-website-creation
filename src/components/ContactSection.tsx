@@ -1,6 +1,5 @@
-
 import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { useToast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -19,11 +18,6 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef(null);
   const { toast } = useToast();
-  
-  useEffect(() => {
-    // Initialize EmailJS with your public key
-    emailjs.init("RXtO2yaS1DANkbyq7");
-  }, []);
   
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
