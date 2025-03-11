@@ -96,7 +96,7 @@ const PortfolioSection = () => {
           PROJEKT_GALLERI
         </div>
         
-        <h1 className="mb-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 tracking-tight leading-tight">
           LANSERADE_<span className="code">PROJEKT</span>
         </h1>
         
