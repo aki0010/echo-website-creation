@@ -1,3 +1,4 @@
+
 import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
@@ -7,43 +8,21 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    projectType: '',
-    budget: '',
-    timeline: '',
-    description: ''
-  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef(null);
   const { toast } = useToast();
   
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    
-    // Map form field names to formData properties
-    const fieldMapping: Record<string, string> = {
-      'from_name': 'name',
-      'from_email': 'email',
-      'project_type': 'projectType',
-      'budget': 'budget',
-      'timeline': 'timeline',
-      'message': 'description'
-    };
-    
-    const formDataKey = fieldMapping[name] || name;
-    
-    setFormData(prev => ({
-      ...prev,
-      [formDataKey]: value
-    }));
-  };
-  
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.description) {
+    const form = formRef.current;
+    
+    // Validate required fields
+    const name = form.user_name.value;
+    const email = form.user_email.value;
+    const message = form.message.value;
+    
+    if (!name || !email || !message) {
       toast({
         title: "Validering misslyckades",
         description: "Vänligen fyll i alla obligatoriska fält.",
@@ -55,49 +34,22 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      console.log("Attempting to send email with data:", {
-        from_name: formData.name,
-        from_email: formData.email,
-        project_type: formData.projectType,
-        budget: formData.budget,
-        timeline: formData.timeline,
-        message: formData.description
-      });
-      
-      // Using the form reference approach which is more reliable
-      if (formRef.current) {
-        await emailjs.sendForm(
-          'service_fnrpg2n', 
-          'template_lcsxkbq', 
-          formRef.current,
-          'RXtO2yaS1DANkbyq7'
-        );
-      } else {
-        // Fallback to the parameters approach
-        await emailjs.send('service_fnrpg2n', 'template_lcsxkbq', {
-          from_name: formData.name,
-          from_email: formData.email,
-          project_type: formData.projectType,
-          budget: formData.budget,
-          timeline: formData.timeline,
-          message: formData.description
-        });
-      }
+      await emailjs.sendForm(
+        'service_fnrpg2n', 
+        'template_z7sd88l', 
+        form,
+        {
+          publicKey: 'RXtO2yaS1DANkbyq7',
+        }
+      );
       
       toast({
         title: "Förfrågan skickad!",
         description: "Vi återkommer till dig så snart som möjligt."
       });
       
-      // Reset form data after successful submission
-      setFormData({
-        name: '',
-        email: '',
-        projectType: '',
-        budget: '',
-        timeline: '',
-        description: ''
-      });
+      // Reset form after successful submission
+      form.reset();
     } catch (error) {
       console.error('EmailJS error:', error);
       toast({
@@ -171,9 +123,7 @@ const ContactSection = () => {
                   <input 
                     type="text" 
                     id="name" 
-                    name="from_name" 
-                    value={formData.name}
-                    onChange={handleInputChange} 
+                    name="user_name" 
                     className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm" 
                     required 
                   />
@@ -183,9 +133,7 @@ const ContactSection = () => {
                   <input 
                     type="email" 
                     id="email" 
-                    name="from_email" 
-                    value={formData.email}
-                    onChange={handleInputChange} 
+                    name="user_email" 
                     className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm" 
                     required 
                   />
@@ -198,8 +146,6 @@ const ContactSection = () => {
                   <select 
                     id="projectType" 
                     name="project_type" 
-                    value={formData.projectType}
-                    onChange={handleInputChange} 
                     className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm"
                   >
                     <option value="">Välj typ</option>
@@ -214,8 +160,6 @@ const ContactSection = () => {
                   <select 
                     id="budget" 
                     name="budget" 
-                    value={formData.budget}
-                    onChange={handleInputChange} 
                     className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm"
                   >
                     <option value="">Välj budget</option>
@@ -231,8 +175,6 @@ const ContactSection = () => {
                 <select 
                   id="timeline" 
                   name="timeline" 
-                  value={formData.timeline}
-                  onChange={handleInputChange} 
                   className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm"
                 >
                   <option value="">Välj tidslinje</option>
@@ -248,8 +190,6 @@ const ContactSection = () => {
                 <Textarea 
                   id="description" 
                   name="message" 
-                  value={formData.description}
-                  onChange={handleInputChange} 
                   className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green min-h-[80px] sm:min-h-[120px] text-xs sm:text-sm" 
                   placeholder="Berätta om ditt projekt..." 
                   required 
