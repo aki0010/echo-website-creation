@@ -1,3 +1,4 @@
+
 import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
@@ -33,10 +34,20 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      await emailjs.sendForm(
+      // Now explicitly including all form fields in the EmailJS submission
+      const templateParams = {
+        user_name: name,
+        user_email: email,
+        project_type: form.project_type.value,
+        budget: form.budget.value,
+        timeline: form.timeline.value,
+        message: message
+      };
+      
+      await emailjs.send(
         'service_fnrpg2n', 
         'template_z7sd88l', 
-        form,
+        templateParams,
         'RXtO2yaS1DANkbyq7'
       );
       
@@ -113,7 +124,7 @@ const ContactSection = () => {
             <div className="absolute top-0 right-0 p-1 sm:p-2 text-[10px] sm:text-xs text-neon-green/70">FORM_v1.2</div>
             <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-300">SKICKA_FÖRFRÅGAN</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="min-w-0">
                   <Label htmlFor="user_name" className="text-xs sm:text-sm">Namn *</Label>
