@@ -172,7 +172,7 @@ const App = () => <QueryClientProvider client={queryClient}>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row justify-between items-center mt-12 pt-8 border-t border-neon-green/20">
-                <p className="text-sm text-neon-green/60">SYSTEM_VERSION_2024 | All rights reserved</p>
+                <p className="text-sm text-neon-green/60">SYSTEM_VERSION_2025 | All rights reserved</p>
                 <p className="text-sm text-neon-green/60 mt-4 sm:mt-0">NEOCODE</p>
               </div>
             </div>
