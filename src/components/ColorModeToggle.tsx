@@ -26,14 +26,16 @@ const ColorModeToggle = ({ className = '' }: ColorModeToggleProps) => {
   return (
     <button
       onClick={toggleColorMode}
-      className={`flex items-center gap-2 px-3 py-1 rounded-full transition-colors ${
+      className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm ${
         isColorBlindMode 
           ? 'bg-[rgb(254,198,161)]/10 border border-[rgb(254,198,161)]/30 text-[rgb(254,198,161)]' 
           : 'bg-neon-green/10 border border-neon-green/30 text-neon-green'
       } ${className}`}
     >
-      <Eye className="w-4 h-4" />
-      <span className="text-sm">
+      <div className="w-2 h-2 rounded-full animate-pulse" style={{ 
+        backgroundColor: isColorBlindMode ? 'rgb(254,198,161)' : '#00FFC4' 
+      }}></div>
+      <span>
         {isColorBlindMode ? 'ACCESSIBLE_MODE' : 'STANDARD_MODE'}
       </span>
     </button>
