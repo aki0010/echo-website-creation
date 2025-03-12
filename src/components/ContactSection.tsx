@@ -1,4 +1,3 @@
-
 import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
@@ -15,7 +14,7 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const form = formRef.current;
+    const form = e.target;
     
     // Validate required fields
     const name = form.user_name.value;
@@ -38,9 +37,7 @@ const ContactSection = () => {
         'service_fnrpg2n', 
         'template_z7sd88l', 
         form,
-        {
-          publicKey: 'RXtO2yaS1DANkbyq7',
-        }
+        'RXtO2yaS1DANkbyq7'
       );
       
       toast({
@@ -116,23 +113,23 @@ const ContactSection = () => {
             <div className="absolute top-0 right-0 p-1 sm:p-2 text-[10px] sm:text-xs text-neon-green/70">FORM_v1.2</div>
             <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-300">SKICKA_FÖRFRÅGAN</h3>
             
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="min-w-0">
-                  <Label htmlFor="name" className="text-xs sm:text-sm">Namn *</Label>
+                  <Label htmlFor="user_name" className="text-xs sm:text-sm">Namn *</Label>
                   <input 
                     type="text" 
-                    id="name" 
+                    id="user_name" 
                     name="user_name" 
                     className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm" 
                     required 
                   />
                 </div>
                 <div className="min-w-0">
-                  <Label htmlFor="email" className="text-xs sm:text-sm">Email *</Label>
+                  <Label htmlFor="user_email" className="text-xs sm:text-sm">Email *</Label>
                   <input 
                     type="email" 
-                    id="email" 
+                    id="user_email" 
                     name="user_email" 
                     className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm" 
                     required 
@@ -142,9 +139,9 @@ const ContactSection = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="min-w-0">
-                  <Label htmlFor="projectType" className="text-xs sm:text-sm">Projekttyp</Label>
+                  <Label htmlFor="project_type" className="text-xs sm:text-sm">Projekttyp</Label>
                   <select 
-                    id="projectType" 
+                    id="project_type" 
                     name="project_type" 
                     className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm"
                   >
@@ -186,9 +183,9 @@ const ContactSection = () => {
               </div>
 
               <div className="min-w-0">
-                <Label htmlFor="description" className="text-xs sm:text-sm">Projektbeskrivning *</Label>
+                <Label htmlFor="message" className="text-xs sm:text-sm">Projektbeskrivning *</Label>
                 <Textarea 
-                  id="description" 
+                  id="message" 
                   name="message" 
                   className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green min-h-[80px] sm:min-h-[120px] text-xs sm:text-sm" 
                   placeholder="Berätta om ditt projekt..." 
@@ -202,9 +199,9 @@ const ContactSection = () => {
                 className="w-full px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-xs sm:text-sm"
               >
                 {isSubmitting ? "Skickar..." : <>
-                    <Send className="w-3 h-3 sm:w-4 sm:h-4" />
-                    Skicka förfrågan
-                  </>}
+                  <Send className="w-3 h-3 sm:w-4 sm:h-4" />
+                  Skicka förfrågan
+                </>}
               </button>
             </form>
           </div>
