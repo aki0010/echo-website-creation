@@ -116,13 +116,7 @@ const App = () => <QueryClientProvider client={queryClient}>
                         <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
                       </span>
                     </ScrollLink>
-                    <ScrollLink to="services" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
-                      <span className="flex items-center">
-                        <span className="mr-2">{'>'}</span>
-                        <span className="flex-grow">WEB3 INTEGRATION</span>
-                        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
-                      </span>
-                    </ScrollLink>
+                    
                     <ScrollLink to="services" smooth={true} duration={500} className="group block p-2 text-neon-green/60 hover:text-neon-green hover:bg-neon-green/5 rounded-md transition-all duration-300 cursor-pointer">
                       <span className="flex items-center">
                         <span className="mr-2">{'>'}</span>
