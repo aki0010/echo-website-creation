@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Eye } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 interface ColorModeToggleProps {
@@ -26,7 +25,7 @@ const ColorModeToggle = ({ className = '' }: ColorModeToggleProps) => {
   return (
     <button
       onClick={toggleColorMode}
-      className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm ${
+      className={`flex items-center gap-2 px-3 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 text-sm w-fit ${
         isColorBlindMode 
           ? 'bg-[rgb(254,198,161)]/10 border border-[rgb(254,198,161)]/30 text-[rgb(254,198,161)]' 
           : 'bg-neon-green/10 border border-neon-green/30 text-neon-green'
