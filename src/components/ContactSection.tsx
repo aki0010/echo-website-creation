@@ -1,4 +1,3 @@
-
 import { Mail, MessageSquare, Twitter, Bot, Calendar, Clock, Send } from 'lucide-react';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
@@ -6,22 +5,20 @@ import { useToast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-
 const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef(null);
-  const { toast } = useToast();
-  
-  const handleSubmit = async (e) => {
+  const {
+    toast
+  } = useToast();
+  const handleSubmit = async e => {
     e.preventDefault();
-    
     const form = e.target;
-    
+
     // Validate required fields
     const name = form.user_name.value;
     const email = form.user_email.value;
     const message = form.message.value;
-    
     if (!name || !email || !message) {
       toast({
         title: "Validering misslyckades",
@@ -30,9 +27,7 @@ const ContactSection = () => {
       });
       return;
     }
-    
     setIsSubmitting(true);
-    
     try {
       // Now explicitly including all form fields in the EmailJS submission
       const templateParams = {
@@ -43,19 +38,12 @@ const ContactSection = () => {
         timeline: form.timeline.value,
         message: message
       };
-      
-      await emailjs.send(
-        'service_fnrpg2n', 
-        'template_z7sd88l', 
-        templateParams,
-        'RXtO2yaS1DANkbyq7'
-      );
-      
+      await emailjs.send('service_fnrpg2n', 'template_z7sd88l', templateParams, 'RXtO2yaS1DANkbyq7');
       toast({
         title: "Förfrågan skickad!",
         description: "Vi återkommer till dig så snart som möjligt."
       });
-      
+
       // Reset form after successful submission
       form.reset();
     } catch (error) {
@@ -69,7 +57,6 @@ const ContactSection = () => {
       setIsSubmitting(false);
     }
   };
-  
   return <section id="contact" className="section-padding py-12 sm:py-16 md:py-[60px] overflow-hidden">
       <div className="container">
         <div className="inline-block px-2 sm:px-3 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-4 sm:mb-6 text-xs sm:text-sm">
@@ -122,40 +109,24 @@ const ContactSection = () => {
           <div className="cyber-card w-full p-4 sm:p-5 md:p-6 border border-neon-green/30 rounded-lg shadow-[0_0_15px_rgba(0,255,196,0.15)] backdrop-blur-sm relative overflow-hidden bg-cyber-dark mt-6 lg:mt-0">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-green/40 to-transparent"></div>
             <div className="absolute top-0 right-0 p-1 sm:p-2 text-[10px] sm:text-xs text-neon-green/70">FORM_v1.2</div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-300">SKICKA_FÖRFRÅGAN</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-neon-purple">SKICKA_FÖRFRÅGAN</h3>
             
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="min-w-0">
                   <Label htmlFor="user_name" className="text-xs sm:text-sm text-gray-300">Namn *</Label>
-                  <input 
-                    type="text" 
-                    id="user_name" 
-                    name="user_name" 
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm text-gray-300" 
-                    required 
-                  />
+                  <input type="text" id="user_name" name="user_name" className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm text-gray-300" required />
                 </div>
                 <div className="min-w-0">
                   <Label htmlFor="user_email" className="text-xs sm:text-sm text-gray-300">Email *</Label>
-                  <input 
-                    type="email" 
-                    id="user_email" 
-                    name="user_email" 
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm text-gray-300" 
-                    required 
-                  />
+                  <input type="email" id="user_email" name="user_email" className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm text-gray-300" required />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="min-w-0">
                   <Label htmlFor="project_type" className="text-xs sm:text-sm text-gray-300">Projekttyp</Label>
-                  <select 
-                    id="project_type" 
-                    name="project_type" 
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm text-gray-300"
-                  >
+                  <select id="project_type" name="project_type" className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm text-gray-300">
                     <option value="">Välj typ</option>
                     <option value="website">Webbplats</option>
                     <option value="webapp">Webbapplikation</option>
@@ -165,11 +136,7 @@ const ContactSection = () => {
                 </div>
                 <div className="min-w-0">
                   <Label htmlFor="budget" className="text-xs sm:text-sm text-gray-300">Budget</Label>
-                  <select 
-                    id="budget" 
-                    name="budget" 
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm text-gray-300"
-                  >
+                  <select id="budget" name="budget" className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm text-gray-300">
                     <option value="">Välj budget</option>
                     <option value="small">10k - 25k SEK</option>
                     <option value="medium">25k - 50k SEK</option>
@@ -180,11 +147,7 @@ const ContactSection = () => {
 
               <div className="min-w-0">
                 <Label htmlFor="timeline" className="text-xs sm:text-sm text-gray-300">Önskad tidslinje</Label>
-                <select 
-                  id="timeline" 
-                  name="timeline" 
-                  className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm text-gray-300"
-                >
+                <select id="timeline" name="timeline" className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm text-gray-300">
                   <option value="">Välj tidslinje</option>
                   <option value="asap">Så snart som möjligt</option>
                   <option value="1month">Inom 1 månad</option>
@@ -195,20 +158,10 @@ const ContactSection = () => {
 
               <div className="min-w-0">
                 <Label htmlFor="message" className="text-xs sm:text-sm text-gray-300">Projektbeskrivning *</Label>
-                <Textarea 
-                  id="message" 
-                  name="message" 
-                  className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green min-h-[80px] sm:min-h-[120px] text-xs sm:text-sm text-gray-300" 
-                  placeholder="Berätta om ditt projekt..." 
-                  required 
-                />
+                <Textarea id="message" name="message" className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green min-h-[80px] sm:min-h-[120px] text-xs sm:text-sm text-gray-300" placeholder="Berätta om ditt projekt..." required />
               </div>
 
-              <button 
-                type="submit" 
-                disabled={isSubmitting} 
-                className="w-full px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-xs sm:text-sm text-gray-300"
-              >
+              <button type="submit" disabled={isSubmitting} className="w-full px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-xs sm:text-sm text-gray-300">
                 {isSubmitting ? "Skickar..." : <>
                   <Send className="w-3 h-3 sm:w-4 sm:h-4 text-neon-green" />
                   Skicka förfrågan
@@ -220,5 +173,4 @@ const ContactSection = () => {
       </div>
     </section>;
 };
-
 export default ContactSection;
