@@ -119,9 +119,9 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="cyber-card w-full p-4 sm:p-5 md:p-6 border border-neon-green/30 rounded-lg shadow-[0_0_15px_rgba(57,255,20,0.15)] backdrop-blur-sm relative overflow-hidden bg-cyber-dark mt-6 lg:mt-0">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-green/40 to-transparent"></div>
-            <div className="absolute top-0 right-0 p-1 sm:p-2 text-[10px] sm:text-xs text-neon-green/70">FORM_v1.2</div>
+          <div className="cyber-card w-full p-4 sm:p-5 md:p-6 border border-neon-purple/30 rounded-lg shadow-[0_0_15px_rgba(157,0,255,0.15)] backdrop-blur-sm relative overflow-hidden bg-cyber-dark mt-6 lg:mt-0">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-purple/40 to-transparent"></div>
+            <div className="absolute top-0 right-0 p-1 sm:p-2 text-[10px] sm:text-xs text-neon-purple/70">FORM_v1.2</div>
             <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-300">SKICKA_FÖRFRÅGAN</h3>
             
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
@@ -132,7 +132,7 @@ const ContactSection = () => {
                     type="text" 
                     id="user_name" 
                     name="user_name" 
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm" 
+                    className="w-full bg-cyber-dark border border-neon-purple/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-purple text-xs sm:text-sm" 
                     required 
                   />
                 </div>
@@ -142,7 +142,7 @@ const ContactSection = () => {
                     type="email" 
                     id="user_email" 
                     name="user_email" 
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm" 
+                    className="w-full bg-cyber-dark border border-neon-purple/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-purple text-xs sm:text-sm" 
                     required 
                   />
                 </div>
@@ -154,7 +154,7 @@ const ContactSection = () => {
                   <select 
                     id="project_type" 
                     name="project_type" 
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm"
+                    className="w-full bg-cyber-dark border border-neon-purple/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-purple text-xs sm:text-sm"
                   >
                     <option value="">Välj typ</option>
                     <option value="website">Webbplats</option>
@@ -168,7 +168,7 @@ const ContactSection = () => {
                   <select 
                     id="budget" 
                     name="budget" 
-                    className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm"
+                    className="w-full bg-cyber-dark border border-neon-purple/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-purple text-xs sm:text-sm"
                   >
                     <option value="">Välj budget</option>
                     <option value="small">10k - 25k SEK</option>
@@ -183,7 +183,7 @@ const ContactSection = () => {
                 <select 
                   id="timeline" 
                   name="timeline" 
-                  className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green text-xs sm:text-sm"
+                  className="w-full bg-cyber-dark border border-neon-purple/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-purple text-xs sm:text-sm"
                 >
                   <option value="">Välj tidslinje</option>
                   <option value="asap">Så snart som möjligt</option>
@@ -198,7 +198,7 @@ const ContactSection = () => {
                 <Textarea 
                   id="message" 
                   name="message" 
-                  className="w-full bg-cyber-dark border border-neon-green/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-green min-h-[80px] sm:min-h-[120px] text-xs sm:text-sm" 
+                  className="w-full bg-cyber-dark border border-neon-purple/30 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 mt-1 focus:outline-none focus:border-neon-purple min-h-[80px] sm:min-h-[120px] text-xs sm:text-sm" 
                   placeholder="Berätta om ditt projekt..." 
                   required 
                 />
@@ -207,7 +207,7 @@ const ContactSection = () => {
               <button 
                 type="submit" 
                 disabled={isSubmitting} 
-                className="w-full px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-neon-green/10 rounded-lg border border-neon-green/30 hover:bg-neon-green/20 transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-xs sm:text-sm"
+                className="w-full px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-neon-purple/10 rounded-lg border border-neon-purple/30 hover:bg-neon-purple/20 transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-xs sm:text-sm"
               >
                 {isSubmitting ? "Skickar..." : <>
                   <Send className="w-3 h-3 sm:w-4 sm:h-4" />
