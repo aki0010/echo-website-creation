@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -31,11 +32,11 @@
   }
 
   .color-blind-mode * {
-    @apply border-[rgb(254,198,161)] border-opacity-20;
+    @apply border-[#44C2FD] border-opacity-20;
   }
 
   .color-blind-mode *::selection {
-    @apply bg-[rgb(254,198,161)] bg-opacity-20 text-[rgb(254,198,161)];
+    @apply bg-[#44C2FD] bg-opacity-20 text-[#44C2FD];
   }
 
   html {
@@ -56,47 +57,95 @@
         transparent 1px, 
         transparent 2px);
   }
+  
+  .color-blind-mode body {
+    @apply bg-[#212529];
+    background-image: 
+      repeating-linear-gradient(0deg, 
+        rgba(68, 194, 253, 0.03) 0px, 
+        rgba(68, 194, 253, 0.03) 1px, 
+        transparent 1px, 
+        transparent 2px),
+      repeating-linear-gradient(90deg, 
+        rgba(68, 194, 253, 0.03) 0px, 
+        rgba(68, 194, 253, 0.03) 1px, 
+        transparent 1px, 
+        transparent 2px);
+  }
 
   /* Color Blind Mode Styles */
   .color-blind-mode .text-neon-green {
-    @apply text-[rgb(254,198,161)];
+    @apply text-[#44C2FD];
   }
 
   .color-blind-mode .bg-neon-green\/10 {
-    @apply bg-[rgb(254,198,161)] bg-opacity-10;
+    @apply bg-[#44C2FD] bg-opacity-10;
   }
 
   .color-blind-mode .border-neon-green\/30 {
-    @apply border-[rgb(254,198,161)] border-opacity-30;
+    @apply border-[#44C2FD] border-opacity-30;
   }
 
   .color-blind-mode .text-neon-purple {
-    @apply text-[rgb(211,228,253)];
+    @apply text-[#FA7D09];
   }
 
   .color-blind-mode .bg-neon-purple\/10 {
-    @apply bg-[rgb(211,228,253)] bg-opacity-10;
+    @apply bg-[#FA7D09] bg-opacity-10;
   }
 
   .color-blind-mode .border-neon-purple\/30 {
-    @apply border-[rgb(211,228,253)] border-opacity-30;
+    @apply border-[#FA7D09] border-opacity-30;
   }
 
   .color-blind-mode .hover\:border-neon-green:hover {
-    @apply border-[rgb(254,198,161)];
+    @apply border-[#44C2FD];
   }
 
   .color-blind-mode .hover\:bg-neon-green\/20:hover {
-    @apply bg-[rgb(254,198,161)] bg-opacity-20;
+    @apply bg-[#44C2FD] bg-opacity-20;
   }
 
   .color-blind-mode .hover\:shadow-\[0_0_20px_rgba\(0\,255\,157\,0\.2\)\]:hover {
-    @apply hover:shadow-[0_0_20px_rgba(254,198,161,0.2)];
+    @apply hover:shadow-[0_0_20px_rgba(68,194,253,0.2)];
   }
 
   .color-blind-mode .animate-pulse-glow {
-    --glow-color: rgb(254 198 161 / 0.5);
-    --glow-spread: rgb(254 198 161 / 0.2);
+    --glow-color: rgb(68 194 253 / 0.5);
+    --glow-spread: rgb(68 194 253 / 0.2);
+  }
+  
+  .color-blind-mode .text-cyber-text-primary {
+    @apply text-[#F3F3F3];
+  }
+  
+  .color-blind-mode .text-cyber-text-secondary {
+    @apply text-[#F3F3F3]/70;
+  }
+  
+  .color-blind-mode .text-neon-green\/60, 
+  .color-blind-mode .text-neon-green\/70, 
+  .color-blind-mode .text-neon-green\/80 {
+    @apply text-[#44C2FD]/70;
+  }
+  
+  .color-blind-mode .service-card,
+  .color-blind-mode .cyber-card {
+    background: linear-gradient(145deg, rgba(33, 37, 41, 0.7), rgba(33, 37, 41, 0.9));
+    border-color: rgba(68, 194, 253, 0.2);
+  }
+  
+  .color-blind-mode .service-card::before {
+    background: linear-gradient(90deg, transparent, #44C2FD, transparent);
+  }
+  
+  .color-blind-mode .service-card:hover {
+    box-shadow: 0 10px 25px -5px rgba(68, 194, 253, 0.1);
+    border-color: rgba(68, 194, 253, 0.2);
+  }
+
+  .color-blind-mode .rain-column {
+    background: linear-gradient(to bottom, transparent, #44C2FD, transparent);
   }
 
   h1 {
@@ -126,6 +175,10 @@
   .badge {
     @apply inline-block px-4 py-1 bg-neon-green/10 rounded-full border border-neon-green/30 mb-6 text-neon-green;
     letter-spacing: 1px;
+  }
+  
+  .color-blind-mode .badge {
+    @apply bg-[#44C2FD]/10 border-[#44C2FD]/30 text-[#44C2FD];
   }
   
   /* Hero section */
@@ -264,4 +317,3 @@
     background: linear-gradient(to bottom, transparent, rgb(254,198,161), transparent);
   }
 }
-
